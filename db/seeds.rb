@@ -1,3 +1,5 @@
+require 'faker'
+
 User.destroy_all
 BookCollection.destroy_all 
 Follow.destroy_all
@@ -155,6 +157,28 @@ BookCollection.create(title: 'Separate Is Never Equal: Sylvia Mendez and Her Fam
 
 puts 'book collection seeded'
 
+puts 'seeding user books'
 
+35.times do
+    UserBook.create(
+        rating: rand(1..5),
+        user_id: User.all.sample.id,
+        book_collection_id: BookCollection.all.sample.id,
+        discussion_questions: Faker::Lorem.sentence,
+        student_anecdotes: Faker::Lorem.sentence
+    )
+end
 
+puts 'user books seeded'
+
+puts 'seeding follows'
+
+35.times do
+    Follow.create(
+        follower_id: User.all.sample.id,
+        followee_id: User.all.sample.id
+    )
+end
+
+puts 'follows seeded'
 
