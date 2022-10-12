@@ -1,5 +1,5 @@
 class UserBook < ApplicationRecord
-    has_many :users
-    belongs_to :book_collections
+    belongs_to :user
+    belongs_to :book_collection
     
 end
