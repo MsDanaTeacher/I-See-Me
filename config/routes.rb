@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :book_collections
+  resources :book_collections, only: [:index, :show]
   resources :user_books
   resources :follows
   resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
+  post '/users/:id/follow', to: "users#follow"
+  post '/users/:id/unfollow', to: "users#unfollow"
 end
