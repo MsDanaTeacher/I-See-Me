@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def create #for /signup
         @user = User.create!(user_params)
-        token = JWT.encode({user_id: @user.id}, 'secret')
+        token = JWT.encode({user_id: @user.id}, secret_key)
         render json: {user: @user, token: token}
     end 
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         #check if user exists and password matches password digest
         if (@user && @user.authenticate(params[:password]))
             #create token for front end
-            token = JWT.encode({user_id: @user.id}, 'secret')
+            token = JWT.encode({user_id: @user.id}, secret_key)
             #pass user instance and token to front end
             render json: {user: @user, token: token}
         end 
@@ -39,6 +39,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         current_user.followed_users.find_by(followee_id: @user.id).destroy
         redirect_back(fallback_location: user_path(@user))
+    end
+
+    def secret_key
+        Rails.application.credentials.secret_key
     end
 
     private

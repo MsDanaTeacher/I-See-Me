@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
         headers = request.headers['Authorization']
         if(headers)
             token = headers.split(' ')[1]
-            cur_id = JWT.decode(token, 'secret', true, algorithm: 'HS256')
+            cur_id = JWT.decode(token, secret_key, true, algorithm: 'HS256')
             @current_user = User.find_by(id: cur_id[0]["user_id"])
             @current_user
         end 
@@ -23,6 +23,9 @@ class ApplicationController < ActionController::API
         render json: { message: 'Please log in' }, status: :unauthorized unless !!logged_in_user
     end 
 
+    def secret_key
+        Rails.application.credentials.secret_key
+    end
     #messages for errors 
     private 
 
