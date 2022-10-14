@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom"
 
 export default function Signup({setUser}) {
 
@@ -46,7 +47,8 @@ export default function Signup({setUser}) {
             <input type="text" name="email" placeholder='email' value={signupData.email}/>
             <input type="text" name="username" placeholder='username' value={signupData.username}/>
             <input type="text" name="password" placeholder='password' value={signupData.password}/>
-            <input type="submit" name="submit"/>
+            <button>Signup</button>
+            <Link to="/">Login</Link>
         </form>
     </div>
   )
