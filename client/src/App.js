@@ -5,7 +5,9 @@ import Signup from './Signup';
 import React, { useState, useEffect } from 'react';
 import Userhome from './Userhome';
 import Footer from './Footer';
-
+import Community from './Community';
+import SearchBooks from './SearchBooks';
+import Profile from './Profile';
 
 function App() {
 
@@ -38,7 +40,10 @@ function App() {
       <Login user={user} setUser={setUser}/> : <Userhome user={user} setUser={setUser}/>}/>
         <Route path="/signup" element={<Signup setUser={setUser}/>}/>    
         <Route path="*" element={<h1>Page Not Found</h1>} />
-
+        <Route path="/home" element={<Userhome user={user} setUser={setUser}/>}/>
+        <Route path="/community" element={<Community user={user} setUser={setUser}/>}/>
+        <Route path="/searchbooks" element={<SearchBooks user={user} setUser={setUser}/>}/>
+        <Route path="/profile" element={<Profile user={user} setUser={setUser}/>}/>
       </Routes>
       <Footer />
       </>
