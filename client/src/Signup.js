@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 
+
 export default function Signup({setUser}) {
 
     const signupBody = {
@@ -34,6 +35,7 @@ export default function Signup({setUser}) {
         .then(data => {
             setUser(data.user)
             localStorage.setItem('token', data.token)
+           
         })
         .catch(err => console.log(err))
     }
