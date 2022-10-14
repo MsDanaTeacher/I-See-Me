@@ -1,8 +1,11 @@
 import './App.css';
+import { Route, Routes } from "react-router-dom";
 import Login from './Login';
 import Signup from './Signup';
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
+import Userhome from './Userhome';
+import Footer from './Footer';
+
 
 function App() {
 
@@ -27,12 +30,21 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Signup setUser={setUser}/>
-      {user.username.length === 0 ? 
-      <Login user={user} setUser={setUser}/> : <Header user={user} setUser={setUser}/>}
-    </div>
+      <>
+      
+      <Routes>
+        
+        <Route exact path="/" element={user.username.length === 0 ? 
+      <Login user={user} setUser={setUser}/> : <Userhome user={user} setUser={setUser}/>}/>
+        <Route path="/signup" element={<Signup setUser={setUser}/>}/>    
+        <Route path="*" element={<h1>Page Not Found</h1>} />
+
+      </Routes>
+      <Footer />
+      </>
   );
 }
 
+// {/* {user.username.length === 0 ? 
+//       <Login user={user} setUser={setUser}/> : <Header user={user} setUser={setUser}/>} */}
 export default App;

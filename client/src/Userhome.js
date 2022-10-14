@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header({user, setUser}) {
+export default function Userhome({user, setUser}) {
     const logout = () => {
         setUser({username: ''})
         localStorage.removeItem('token')
@@ -8,7 +8,7 @@ export default function Header({user, setUser}) {
     
   return (
     <div>
-        <h1>Hi, {user.username}</h1>
+        <h1>Hi, {user.name}</h1>
         <button onClick={logout}>Logout</button>
     </div>
   )
