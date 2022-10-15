@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :user_books
   resources :follows
   # resources :users
-  
+  get '/collection', to: 'book_collections#index'
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
   post '/login', to: 'users#login'
