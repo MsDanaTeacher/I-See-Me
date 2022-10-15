@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
-import { Navigate } from "react-router-dom"
+import { Navigate, Link } from "react-router-dom"
 import BookTiles from './BookTiles'
+import SearchBar from './SearchBar'
 
 export default function SearchBooks({user,setUser}) {
-  
-  
   const [bookData, setBookData] = useState([])
-  // const [filteredBooks, setFilteredBooks] = useState(bookData)
-  
+  const [filteredBooks, setFilteredBooks] = useState({...bookData})
+  const [search, setSearch] = useState("")
+
     const logout = () => {
         setUser({username: ''})
         localStorage.removeItem('token')
@@ -23,28 +23,26 @@ export default function SearchBooks({user,setUser}) {
           }
         })
         .then(res => res.json())
-        .then(data => {
-            setBookData(data)
-          
-        })
+        .then(
+            setBookData 
+        )
       }
-    }, [bookData])   
+    }, []) 
+      
+  function handleFilteringBooks(e){
+    setFilteredBooks(e.target.value)
+  }
 
+    
+  const filteredBooksBySubject = bookData.filter((book) => book.subject === filteredBooks )
+  const searchForBooks = bookData.filter((book) => book.title.toLowerCase().includes(search.toLowerCase()))
 
-    function handleChange(e){
-      console.log(e.target.value)
-      if(e.target.value === bookData.subject){
-        setBookData(bookData.subject)
-       console.log("it's a match!")
-      }
-    }
   return (
     <div>
         <button onClick={logout}>Logout</button>
         {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
-        <input type="text" placeholder="Search titles..."/>
-        <img src={process.env.PUBLIC_URL+"images/free_icon_1_copy.svg"} height="40px" width="40px"/>
-        <select onChange={handleChange}>
+        <SearchBar search={search} setSearch={setSearch}/>
+        <select onChange={handleFilteringBooks} value={filteredBooks}>
           <option value="Select">Select</option>
           <option value="Girls in Tech">Girls in Tech</option>
           <option value="LGBTQIA+">LGBTQIA+</option>
@@ -58,11 +56,11 @@ export default function SearchBooks({user,setUser}) {
           <option value="Muslim">Muslim</option>
           <option value="Jewish">Jewish</option>
           <option value="Latinx">Latinx</option>
-          <option value="Social Justice">Social Justice</option>
         </select>
         <br />
         BUILD YOUR LIBRARY!
-        <BookTiles bookData={bookData}/>
+        <BookTiles books={searchForBooks}/>
+        <p>Have a book recommendation? Share it <Link to="/bookrecommendation">here!</Link></p>
     </div>
   )
 }
