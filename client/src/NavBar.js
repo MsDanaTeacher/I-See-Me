@@ -11,6 +11,7 @@ export default function NavBar({user}) {
             <Link to="/community">Community</Link>
             <Link to="/searchbooks">Search Books</Link>
             <Link to="/profile">Profile</Link>
+            <img src={process.env.PUBLIC_URL+"images/free_icon_1.svg"} height="40px" width="40px"/>
         </li>
     </div>
   )
