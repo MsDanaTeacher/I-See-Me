@@ -1,0 +1,10 @@
+.book-tiles {
+    display: flex;
+    width: 85vw;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.books {
+    padding: 1%;
+}
