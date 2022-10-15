@@ -6,8 +6,9 @@ import React, { useState, useEffect } from 'react';
 import Userhome from './Userhome';
 import Footer from './Footer';
 import Community from './Community';
-import SearchBooks from './SearchBooks';
+import SearchBooks from './SearchBooksPage';
 import Profile from './Profile';
+import RecommendationForm from './RecommendationForm';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
         <Route path="/community" element={<Community user={user} setUser={setUser}/>}/>
         <Route path="/searchbooks" element={<SearchBooks user={user} setUser={setUser}/>}/>
         <Route path="/profile" element={<Profile user={user} setUser={setUser}/>}/>
+        <Route path="/bookrecommendation" element={<RecommendationForm user={user} setUser={setUser}/>}/>
       </Routes>
       <Footer />
       </>
