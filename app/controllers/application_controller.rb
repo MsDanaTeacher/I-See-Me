@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+    include ::ActionController::Serialization
     # rescue_from User::NotAuthorized, with: :deny_access
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity
