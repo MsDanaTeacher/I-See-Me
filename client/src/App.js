@@ -6,14 +6,30 @@ import React, { useState, useEffect } from 'react';
 import Userhome from './Userhome';
 import Footer from './Footer';
 import Community from './Community';
-import SearchBooks from './SearchBooksPage';
+import SearchBooksPage from './SearchBooksPage';
 import Profile from './Profile';
 import RecommendationForm from './RecommendationForm';
 
 function App() {
 
   let [user, setUser] = useState({ username: '' })
-
+  const [bookData, setBookData] = useState([])
+  
+  useEffect(() => {
+    let token = localStorage.getItem('token')
+    if(token){
+      fetch('/collection', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(res => res.json())
+      .then(
+          setBookData 
+      )
+    }
+  }, []) 
+  
   //auto login
   useEffect(() => {
     let token = localStorage.getItem('token')
@@ -44,8 +60,8 @@ function App() {
         <Route path="*" element={<h1>Page Not Found</h1>} />
         <Route path="/home" element={<Userhome user={user} setUser={setUser}/>}/>
         <Route path="/community" element={<Community user={user} setUser={setUser}/>}/>
-        <Route path="/searchbooks" element={<SearchBooks user={user} setUser={setUser}/>}/>
-        <Route path="/profile" element={<Profile user={user} setUser={setUser}/>}/>
+        <Route path="/searchbooks" element={<SearchBooksPage user={user} setUser={setUser} bookData={bookData}/>}/>
+        <Route path="/profile" element={<Profile user={user} setUser={setUser} books={bookData}/>}/>
         <Route path="/bookrecommendation" element={<RecommendationForm user={user} setUser={setUser}/>}/>
       </Routes>
       <Footer />

@@ -1,7 +1,17 @@
 import React from 'react'
 export default function BookTiles({books}) {
+
+
     function handleClick(){
-        console.log('clicked')
+    //   fetch('/adduserbooks', {
+    //   method: 'POST',
+    //   headers: {
+    //     'content-type': 'application/json'
+    //   },
+    //   body: JSON.stringify()
+    // })
+    // .then(res => res.json())
+    console.log('clicked')
     }
     
     const bookCollection = books;

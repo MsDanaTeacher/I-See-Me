@@ -4,39 +4,54 @@ import { Navigate, Link } from "react-router-dom"
 import BookTiles from './BookTiles'
 import SearchBar from './SearchBar'
 
-export default function SearchBooks({user,setUser}) {
-  const [bookData, setBookData] = useState([])
-  const [filteredBooks, setFilteredBooks] = useState({...bookData})
+export default function SearchBooksPage({user,setUser, bookData}) {
+  // const [bookData, setBookData] = useState([])
+  //want filtered books to be empty because no subject is selected to start
+  const [filteredBooks, setFilteredBooks] = useState()
   const [search, setSearch] = useState("")
-
+  const [displayedBooks, setDisplayedBooks] = useState([...bookData])
+//displayed books starts out as all the book data
     const logout = () => {
         setUser({username: ''})
         localStorage.removeItem('token')
     }
 
-    useEffect(() => {
-      let token = localStorage.getItem('token')
-      if(token){
-        fetch('/collection', {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        })
-        .then(res => res.json())
-        .then(
-            setBookData 
-        )
-      }
-    }, []) 
+    // useEffect(() => {
+    //   let token = localStorage.getItem('token')
+    //   if(token){
+    //     fetch('/collection', {
+    //       headers: {
+    //         'Authorization': `Bearer ${token}`
+    //       }
+    //     })
+    //     .then(res => res.json())
+    //     .then(
+    //         setBookData 
+    //     )
+    //   }
+    // }, []) 
       
-  function handleFilteringBooks(e){
-    setFilteredBooks(e.target.value)
-  }
+    //any time the dropdown menu value changes, want it to rerender the page with those filtered books
+    useEffect(() => setDisplayedBooks([...searchForBooks]), [filteredBooks, search])
+    
+    
+    const filteredBooksBySubject = bookData.filter((book) => {
+      //if filter is selected, return the books whose subject match that filter
+      if (!!filteredBooks && filteredBooks !== "Select"){
+        return book.subject === filteredBooks
+        //otherwise, return all the books
+      } else {
+        return book
+      }
+    })
+    const searchForBooks = filteredBooksBySubject.filter((book) => book.title.toLowerCase().includes(search.toLowerCase()))
+    console.log(filteredBooksBySubject)
+
+    function handleFilteringBooks(e){
+      setFilteredBooks(e.target.value)
+    }
 
     
-  const filteredBooksBySubject = bookData.filter((book) => book.subject === filteredBooks )
-  const searchForBooks = bookData.filter((book) => book.title.toLowerCase().includes(search.toLowerCase()))
-
   return (
     <div>
         <button onClick={logout}>Logout</button>
@@ -59,7 +74,7 @@ export default function SearchBooks({user,setUser}) {
         </select>
         <br />
         BUILD YOUR LIBRARY!
-        <BookTiles books={searchForBooks}/>
+        <BookTiles books={displayedBooks}/>
         <p>Have a book recommendation? Share it <Link to="/bookrecommendation">here!</Link></p>
     </div>
   )
