@@ -1,22 +1,24 @@
 import React from 'react'
 
-export default function UserBookTiles({user, userbooks}) {
-    const userBookCollection = userbooks.filter((book) => book.user_id === user.id);
+export default function UserBookTiles({userbooks}) {
+   
     
-    const allUserBooks = userBookCollection.map((book, i) => {
-      console.log(userBookCollection)
+    const allUserBooks = userbooks.map((book, i) => {
+      
     return (
        <div key={i} className="books">
         <p>{book.title}</p>
-        <img src={book.image} height="200px" width="200px"/>
-        <p>Add to library</p>
+        <img src={book.image} height="200px" width="200px"/><br />
         <img src={process.env.PUBLIC_URL+"images/free_icon_1.svg"} height="40px" width="40px" />
+        <p>Remove from shelf</p>
+        <img src={process.env.PUBLIC_URL+"images/shopping_cart.svg"} height="50px" width="50px" />
+        <p>I want it!</p>
         </div>
     )})
     
    
   return (
-    <div>
+    <div className='book-tiles'>
         {allUserBooks}
     </div>
   )

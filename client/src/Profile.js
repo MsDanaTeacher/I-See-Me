@@ -33,7 +33,9 @@ export default function Profile({user, setUser, books}) {
         <button onClick={logout}>Logout</button>
         {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
         <h1>{user.name}'s Bookshelf</h1>
+        <div className='book-tiles'>
         <UserBookTiles user={user} userbooks={userBookData} books={books}/>
+        </div>
     </div>
   )
 }

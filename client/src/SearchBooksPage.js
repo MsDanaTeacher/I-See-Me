@@ -45,7 +45,7 @@ export default function SearchBooksPage({user,setUser, bookData}) {
       }
     })
     const searchForBooks = filteredBooksBySubject.filter((book) => book.title.toLowerCase().includes(search.toLowerCase()))
-    console.log(filteredBooksBySubject)
+    
 
     function handleFilteringBooks(e){
       setFilteredBooks(e.target.value)
