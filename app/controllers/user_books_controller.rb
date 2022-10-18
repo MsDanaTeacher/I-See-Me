@@ -1,4 +1,5 @@
 class UserBooksController < ApplicationController
+    
     def index
         # render json: 'hello'
         # render json: @current_user.user_books, serializer: UserBooksWithDetailsSerializer
@@ -12,7 +13,7 @@ class UserBooksController < ApplicationController
     end
 
     def create
-        user = UserBook.create!(user_book_params)
+        user = UserBook.create!(user_id: @current_user.id, book_collection_id: params[:book_collection_id])
         render json: user
     end
 
@@ -23,9 +24,11 @@ class UserBooksController < ApplicationController
     end
 
     def destroy
-        user = UserBook.find(params[:id])
-        user.destroy
+        user_book = UserBook.find_by(user_id: @current_user.id, book_collection_id: params[:id])
+        if user_book
+            user_book.destroy
         head :no_content
+        end
     end
 
     private

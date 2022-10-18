@@ -26,7 +26,28 @@ export default function Profile({user, setUser, books}) {
       }
     }, []) 
 
-    
+    function handleDeleteBook(book){
+      console.log(book)
+      let token = localStorage.getItem('token')
+      if(user){
+        fetch(`/deleteuserbook/${book.id}`, {
+        method: "DELETE",
+        headers: { 
+          'Authorization': `Bearer ${token}`
+          }
+        })
+        // .then(res => res.json())
+        // .then(data => {
+        //   //use .filter to remove based on id
+          updatedBooks(book)
+        //   //remove book from userBookData - using setUserBookData
+        // })
+    }}
+
+    function updatedBooks(data){
+      const rerenderedBooks = userBookData.filter((book) => book.id !== data.id);
+      setUserBookData(rerenderedBooks)
+    }
 
   return (
     <div>
@@ -34,7 +55,7 @@ export default function Profile({user, setUser, books}) {
         {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
         <h1>{user.name}'s Bookshelf</h1>
         <div className='book-tiles'>
-        <UserBookTiles user={user} userbooks={userBookData} books={books}/>
+        <UserBookTiles user={user} userbooks={userBookData} books={books} handleDeleteBook={handleDeleteBook}/>
         </div>
     </div>
   )

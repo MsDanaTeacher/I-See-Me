@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/me', to: 'users#show'
   post '/login', to: 'users#login'
   post '/logout', to: 'users#logout'
-
+  delete '/deleteuserbook/:id', to: 'user_books#destroy'
   
   
   post '/users/:id/follow', to: "users#follow"
