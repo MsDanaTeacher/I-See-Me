@@ -1,18 +1,30 @@
-import React, { useState, useEffect } from 'react'
-export default function BookTiles({books}) {
+import React from 'react'
 
-const [clickedBook, setClickedBook] = useState({
-  books
-})
 
-console.log(clickedBook)
+export default function BookTiles({books, user}) {
+
+function handleClick(book){
+
+  let token = localStorage.getItem('token')
+  if(user){
+    fetch('/newuserbook', {
+      method: 'POST',
+      body: JSON.stringify({book_collection_id: book.id}),
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.json())
+}
+}
 
 
     const bookCollection = books;
     const allBooks = bookCollection.map((book, i) => 
        <div key={i} className="books"><img src={book.image} height="200px" width="200px"/>
         <p>Add to library</p>
-        <img src={process.env.PUBLIC_URL+"images/free_icon_1.svg"} height="40px" width="40px" onClick={() => setClickedBook(book)}/>
+        <img src={process.env.PUBLIC_URL+"images/free_icon_1.svg"} height="40px" width="40px" onClick={() => handleClick(book)}/>
         </div>
     );
 

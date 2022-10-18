@@ -15,21 +15,6 @@ export default function SearchBooksPage({user,setUser, bookData}) {
         setUser({username: ''})
         localStorage.removeItem('token')
     }
-
-    // useEffect(() => {
-    //   let token = localStorage.getItem('token')
-    //   if(token){
-    //     fetch('/collection', {
-    //       headers: {
-    //         'Authorization': `Bearer ${token}`
-    //       }
-    //     })
-    //     .then(res => res.json())
-    //     .then(
-    //         setBookData 
-    //     )
-    //   }
-    // }, []) 
       
     //any time the dropdown menu value changes, want it to rerender the page with those filtered books
     useEffect(() => setDisplayedBooks([...searchForBooks]), [filteredBooks, search])
@@ -74,7 +59,7 @@ export default function SearchBooksPage({user,setUser, bookData}) {
         </select>
         <br />
         BUILD YOUR LIBRARY!
-        <BookTiles books={displayedBooks}/>
+        <BookTiles books={displayedBooks} user={user}/>
         <p>Have a book recommendation? Share it <Link to="/bookrecommendation">here!</Link></p>
     </div>
   )
