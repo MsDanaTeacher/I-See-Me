@@ -34,6 +34,6 @@ class UserBooksController < ApplicationController
     private
 
     def user_book_params
-        params.permit(:rating, :user_id, :book_collection_id, :discussion_questions, :student_anecdotes)
+        params.permit(:rating, :user_id, :book_collection_id)
     end
 end
