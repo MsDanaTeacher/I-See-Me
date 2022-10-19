@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_192009) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_18_231458) do
   create_table "book_collections", force: :cascade do |t|
     t.string "title"
     t.string "author"
     t.string "subject"
     t.string "image"
     t.boolean "banned"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "discussion_questions", force: :cascade do |t|
+    t.string "discussion_question"
+    t.integer "user_book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

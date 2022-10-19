@@ -9,7 +9,7 @@ class UserBooksController < ApplicationController
 
 
     def show
-        render json: UserBook.find(params[:id])
+        render json: UserBook.find_by(user_id: @current_user.id, book_collection_id: params[:id])
     end
 
     def create

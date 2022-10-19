@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  discussion_question: MyString
+  user_book_id: 1
+
+two:
+  discussion_question: MyString
+  user_book_id: 1
