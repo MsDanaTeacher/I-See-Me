@@ -71,6 +71,4 @@ function App() {
   );
 }
 
-// {/* {user.username.length === 0 ? 
-//       <Login user={user} setUser={setUser}/> : <Header user={user} setUser={setUser}/>} */}
 export default App;

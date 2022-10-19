@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :student_quotes
   resources :discussion_questions
   resources :book_collections, only: [:index, :show]
   resources :user_books
