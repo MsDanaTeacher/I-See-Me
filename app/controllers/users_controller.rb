@@ -16,6 +16,7 @@ class UsersController < ApplicationController
         render json: {user: @current_user}
     end 
 
+    
     def logout 
         @current_user = nil
         head :no_content

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :discussion_questions
   resources :book_collections, only: [:index, :show]
   resources :user_books
   resources :follows
-
+  
   resources :users
   
   get '/userbooks', to: 'user_books#index'
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login'
   post '/logout', to: 'users#logout'
   delete '/deleteuserbook/:id', to: 'user_books#destroy'
+  patch '/updateuserlesson/:id', to: 'user_books#update'
+  
   
   
   post '/users/:id/follow', to: "users#follow"

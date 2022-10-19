@@ -9,6 +9,7 @@ import Community from './Community';
 import SearchBooksPage from './SearchBooksPage';
 import Profile from './Profile';
 import RecommendationForm from './RecommendationForm';
+import UserBookLesson from './UserBookLesson';
 
 function App() {
 
@@ -63,6 +64,7 @@ function App() {
         <Route path="/searchbooks" element={<SearchBooksPage user={user} setUser={setUser} bookData={bookData}/>}/>
         <Route path="/profile" element={<Profile user={user} setUser={setUser} books={bookData}/>}/>
         <Route path="/bookrecommendation" element={<RecommendationForm user={user} setUser={setUser}/>}/>
+        <Route path={`/userbooklesson/:userid/:bookid`} element={<UserBookLesson user={user} setUser={setUser}/>}/>
       </Routes>
       <Footer />
       </>
