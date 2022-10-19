@@ -93,9 +93,27 @@ function handleQuestionDelete(question){
         updatedQuestions(question)
     }}
 
+function handleQuoteDelete(quote){
+  console.log(quote)
+  let token = localStorage.getItem('token')
+      if(user){
+        fetch(`/student_quotes/${quote.id}`, {
+        method: "DELETE",
+        headers: { 
+          'Authorization': `Bearer ${token}`
+          }
+        })
+        updatedQuotes(quote)
+    }}
+
 function updatedQuestions(data){
   const rerenderedQuestions = allQuestions.filter((question) => question.id !== data.id);
   setAllQuestions(rerenderedQuestions)
+}
+
+function updatedQuotes(data){
+  const rerenderedQuotes = allStudentQuotes.filter((quote) => quote.id !== data.id);
+  setAllStudentQuotes(rerenderedQuotes)
 }
 
 function recentQuestion(id, newquestion){
@@ -105,6 +123,15 @@ function recentQuestion(id, newquestion){
   console.log(newQuestion)
   setAllQuestions(newQuestion)
 }
+
+function recentQuote(id, newquote){
+  const newQuote = [...allStudentQuotes].filter((quote) => quote.id !== id)
+  newQuote.filter((quote) => quote.id !== id)
+  newQuote.unshift(newquote)
+  console.log(newQuote)
+  setAllStudentQuotes(newQuote)
+}
+
   return (
     <div>
         <button onClick={logout}>Logout</button>
@@ -131,7 +158,7 @@ function recentQuestion(id, newquestion){
     </form>
     <ul>
     {allStudentQuotes.map((quote) => 
-      <StudentQuote quote={quote} lessonBook={lessonBook} />
+      <StudentQuote quote={quote} handleQuoteDelete={handleQuoteDelete} lessonBook={lessonBook} recentQuote={recentQuote}/>
     )}
     </ul>
 
