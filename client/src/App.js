@@ -60,7 +60,7 @@ function App() {
         <Route path="/signup" element={<Signup setUser={setUser}/>}/>    
         <Route path="*" element={<h1>Page Not Found</h1>} />
         <Route path="/home" element={<Userhome user={user} setUser={setUser}/>}/>
-        <Route path="/community" element={<Community user={user} setUser={setUser}/>}/>
+        <Route path="/community" element={<Community currentUser={user} setUser={setUser}/>}/>
         <Route path="/searchbooks" element={<SearchBooksPage user={user} setUser={setUser} bookData={bookData}/>}/>
         <Route path="/profile" element={<Profile user={user} setUser={setUser} books={bookData}/>}/>
         <Route path="/bookrecommendation" element={<RecommendationForm user={user} setUser={setUser}/>}/>

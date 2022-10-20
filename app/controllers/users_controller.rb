@@ -5,6 +5,7 @@ class UsersController < ApplicationController
         render json: User.all
     end
     
+
     def create #for /signup
         @user = User.create!(user_params)
         token = JWT.encode({user_id: @user.id}, secret_key)
@@ -34,17 +35,18 @@ class UsersController < ApplicationController
         end 
     end
 
-    def follow
-        @user = User.find(params[:id])
-        current_user.followees << @user
-        redirect_back(fallback_location: user_path(@user))
-    end
+    # def follow
+    #     current_user = @current_user
+    #     @user = User.find(params[:id])
+    #     current_user.followees << @user
+    #     # redirect_back(fallback_location: user_path(@user))
+    # end
 
-    def unfollow
-        @user = User.find(params[:id])
-        current_user.followed_users.find_by(followee_id: @user.id).destroy
-        redirect_back(fallback_location: user_path(@user))
-    end
+    # def unfollow
+    #     @user = User.find(params[:id])
+    #     current_user.followed_users.find_by(followee_id: @user.id).destroy
+    #     # redirect_back(fallback_location: user_path(@user))
+    # end
 
     def secret_key
         Rails.application.credentials.secret_key
@@ -53,6 +55,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:name, :grade, :email, :username, :password)
+        params.permit(:name, :grade, :email, :username, :password, :image)
     end
 end

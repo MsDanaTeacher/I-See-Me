@@ -9,7 +9,8 @@ export default function Signup({setUser}) {
         grade: '',
         email: '',
         username: '',
-        password: ''
+        password: '',
+        image: ''
     }
     const [signupData, setSignUpData] = useState({...signupBody})
 
@@ -49,6 +50,7 @@ export default function Signup({setUser}) {
             <input type="text" name="email" placeholder='email' value={signupData.email}/>
             <input type="text" name="username" placeholder='username' value={signupData.username}/>
             <input type="text" name="password" placeholder='password' value={signupData.password}/>
+            <input type="file" name="image" accept="image/*" value={signupData.image}/>
             <button>Signup</button>
             <Link to="/">Login</Link>
         </form>

@@ -7,13 +7,13 @@ class User < ApplicationRecord
     has_many :book_collections, through: :user_books
 
     has_secure_password
-    # validates :username, uniqueness: :true
-    # validates :username, presence: :true
-    # validates :name, presence: :true
-    # validates :grade, presence: :true
-    # validates :email, presence: :true
-    # validates :email, uniqueness: :true
-    # validates :password, presence: :true
+    validates :username, uniqueness: :true
+    validates :username, presence: :true
+    validates :name, presence: :true
+    validates :grade, presence: :true
+    validates :email, presence: :true
+    validates :email, uniqueness: :true
+    validates :password, presence: :true
     # validates :password, confirmation: { case_sensitive: true }
     # validates :password, length: { in: 4..10 }
 

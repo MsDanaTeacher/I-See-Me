@@ -4,16 +4,20 @@ import NavBar from './NavBar'
 import { Navigate } from "react-router-dom"
 import StudentQuestion from './StudentQuestion'
 import StudentQuote from './StudentQuote'
+import StudentWork from './StudentWork'
 
 export default function UserBookLesson({user, setUser}) {
-   const params = useParams()
-   const [lessonBook, setLessonBook] = useState([])
+  const params = useParams()
+  const [lessonBook, setLessonBook] = useState([])
   const [bookCollection, setBookCollection] = useState([])
   const [discussionQuestion, setDiscussionQuestion] = useState({discussion_question: ""})
   const [allQuestions, setAllQuestions] = useState([])
   
   const [studentQuote, setStudentQuote] = useState({student_quote: ""})
   const [allStudentQuotes, setAllStudentQuotes] = useState([])
+
+  const [studentWork, setStudentWork] = useState({student_work: ""})
+  const [allStudentWork, setAllStudentWork] = useState([])
 
    const logout = () => {
     setUser({username: ''})
@@ -35,6 +39,7 @@ useEffect(() => {
         setLessonBook(data)
         setAllQuestions(data.discussion_questions)
         setAllStudentQuotes(data.student_quotes)
+        setAllStudentWork(data.student_works)
         }
       )
     }
@@ -43,26 +48,6 @@ useEffect(() => {
 
 function handleFormChange(e){
   setDiscussionQuestion({...discussionQuestion, [e.target.name]: e.target.value})
-}
-
-function handleStudentQuoteChange(e){
-  setStudentQuote({...studentQuote, [e.target.name]: e.target.value})
-}
-
-function handleStudentQuoteSubmit(e){
-  e.preventDefault()
-  let token = localStorage.getItem('token')
-  if(token){
-  fetch('/student_quotes', {
-    method: 'POST',
-    body: JSON.stringify({student_quote: studentQuote.student_quote, user_book_id: lessonBook.id}),
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-    
-  })}
-  
 }
 
 function handleFormSubmit(e){
@@ -80,6 +65,14 @@ function handleFormSubmit(e){
   })}
 }
 
+function recentQuestion(id, newquestion){
+  const newQuestion = [...allQuestions].filter((question) => question.id !== id)
+  newQuestion.filter((question) => question.id !== id)
+  newQuestion.unshift(newquestion)
+  console.log(newQuestion)
+  setAllQuestions(newQuestion)
+}
+
 function handleQuestionDelete(question){
   console.log(question)
   let token = localStorage.getItem('token')
@@ -92,6 +85,37 @@ function handleQuestionDelete(question){
         })
         updatedQuestions(question)
     }}
+
+function updatedQuestions(data){
+  const rerenderedQuestions = allQuestions.filter((question) => question.id !== data.id);
+  setAllQuestions(rerenderedQuestions)
+}
+
+function handleStudentQuoteChange(e){
+  setStudentQuote({...studentQuote, [e.target.name]: e.target.value})
+}
+
+function handleStudentQuoteSubmit(e){
+  e.preventDefault()
+  let token = localStorage.getItem('token')
+  if(token){
+  fetch('/student_quotes', {
+    method: 'POST',
+    body: JSON.stringify({student_quote: studentQuote.student_quote, user_book_id: lessonBook.id}),
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }    
+  })}  
+}
+
+function recentQuote(id, newquote){
+  const newQuote = [...allStudentQuotes].filter((quote) => quote.id !== id)
+  newQuote.filter((quote) => quote.id !== id)
+  newQuote.unshift(newquote)
+  console.log(newQuote)
+  setAllStudentQuotes(newQuote)
+}
 
 function handleQuoteDelete(quote){
   console.log(quote)
@@ -106,30 +130,45 @@ function handleQuoteDelete(quote){
         updatedQuotes(quote)
     }}
 
-function updatedQuestions(data){
-  const rerenderedQuestions = allQuestions.filter((question) => question.id !== data.id);
-  setAllQuestions(rerenderedQuestions)
-}
-
 function updatedQuotes(data){
   const rerenderedQuotes = allStudentQuotes.filter((quote) => quote.id !== data.id);
   setAllStudentQuotes(rerenderedQuotes)
 }
 
-function recentQuestion(id, newquestion){
-  const newQuestion = [...allQuestions].filter((question) => question.id !== id)
-  newQuestion.filter((question) => question.id !== id)
-  newQuestion.unshift(newquestion)
-  console.log(newQuestion)
-  setAllQuestions(newQuestion)
+function handleStudentWorkChange(e){
+  setStudentWork({...studentWork, [e.target.name]: e.target.value})
 }
 
-function recentQuote(id, newquote){
-  const newQuote = [...allStudentQuotes].filter((quote) => quote.id !== id)
-  newQuote.filter((quote) => quote.id !== id)
-  newQuote.unshift(newquote)
-  console.log(newQuote)
-  setAllStudentQuotes(newQuote)
+function handleStudentWorkSubmit(e){
+  e.preventDefault()
+  let token = localStorage.getItem('token')
+  if(token){
+  fetch('/student_works', {
+    method: 'POST',
+    body: JSON.stringify({student_work: studentWork.student_work, user_book_id: lessonBook.id}),
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }    
+  })}
+}
+
+function handleWorkDelete(work){
+  console.log(work)
+  let token = localStorage.getItem('token')
+      if(user){
+        fetch(`/student_works/${work.id}`, {
+        method: "DELETE",
+        headers: { 
+          'Authorization': `Bearer ${token}`
+          }
+        })
+        updatedWorks(work)
+    }}
+
+function updatedWorks(data){
+  const rerenderedWorks = allStudentWork.filter((work) => work.id !== data.id);
+  setAllStudentWork(rerenderedWorks)
 }
 
   return (
@@ -163,6 +202,13 @@ function recentQuote(id, newquote){
     </ul>
 
     <p>Student Work</p>
+    <form onChange={handleStudentWorkChange} onSubmit={handleStudentWorkSubmit}>
+       <input type="file" name="student_work" accept="image/*" value={studentWork.student_work}/>
+       <button>Add</button>
+    </form>
+      {allStudentWork.map((work) =>
+        <StudentWork work={work} handleWorkDelete={handleWorkDelete}/>
+      )}
     </div>
   )
 }
