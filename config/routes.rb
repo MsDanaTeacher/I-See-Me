@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :student_works
   resources :student_quotes
   resources :discussion_questions
   resources :book_collections, only: [:index, :show]
@@ -17,8 +18,4 @@ Rails.application.routes.draw do
   delete '/deleteuserbook/:id', to: 'user_books#destroy'
   patch '/updateuserlesson/:id', to: 'user_books#update'
   
-  
-  
-  post '/users/:id/follow', to: "users#follow"
-  post '/users/:id/unfollow', to: "users#unfollow"
 end
