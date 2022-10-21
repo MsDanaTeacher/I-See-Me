@@ -96,9 +96,13 @@ function App() {
           element={<UserBookLesson user={user} setUser={setUser} />}
         />
         <Route
-          path={`/followeebooklesson/:userid/:bookid`}
+          path={`/followeebooklesson/:id`}
           element={<FolloweeBookShelf user={user} setUser={setUser} />}
         />
+        {/* <Route
+          path={`/followeebooklessondetails/:id`}
+          element={<FolloweeBookLesson user={user} setUser={setUser} />}
+        /> */}
       </Routes>
       <Footer />
     </>

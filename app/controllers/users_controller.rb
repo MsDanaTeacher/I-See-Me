@@ -17,7 +17,11 @@ class UsersController < ApplicationController
         render json: {user: @current_user}
     end 
 
-    
+    def showfollowee
+        followee = User.find(params[:id])
+        render json: followee, serializer: FolloweeAllInformationSerializer, status: :ok
+    end
+
     def logout 
         @current_user = nil
         head :no_content

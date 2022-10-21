@@ -98,7 +98,7 @@ export default function Community({currentUser,setUser}) {
         
          <div key={i} className="each-member">
           <img src={user.image} />
-          <p>{user.username}</p>
+          <Link to={`/followeebooklesson/${user.id}`}><p>{user.username}</p></Link>
           <p>{user.grade}</p>
           <button onClick={() => handleFollow(user)}>follow</button>
           </div>
@@ -108,7 +108,7 @@ export default function Community({currentUser,setUser}) {
       return (
         <div key={i} className="each-favorite">
           <img src={follow.image} />
-          <p>{follow.username}</p>
+          <Link to={`/followeebooklesson/${follow.id}`}><p>{follow.username}</p></Link>
           <button onClick={() => handleFollowDelete(follow)}>unfollow</button>
           </div>
       )

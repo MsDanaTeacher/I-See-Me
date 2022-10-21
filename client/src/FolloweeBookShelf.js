@@ -1,18 +1,21 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+// import FolloweeBookLesson from './FolloweeBookLesson';
 
 export default function FolloweeBookShelf() {
-    // function handleButtonClick(){
-    //     setFolloweeBookshelf(prev => !prev)
-    // }
-    // const followeeBooks = followee.book_collections
-    // const allBooks = followeeBooks.map((el, i) => {
-    //     return (
-    //         <div key={i} className="followee-books">
-    //            <p>{el.title}</p>
-    //            <p>View lesson!</p>
-    //            <img src={el.image} height="200px" width="200px"/><br />
-    //         </div>
-    //     )})
+  const params = useParams();
+  
+  let token = localStorage.getItem("token");
+  if(token){
+  fetch(`/followeeinformation/${params.id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+  }
+
   return (
     <div>
         {/* <button onClick={handleButtonClick}>back</button> */}
