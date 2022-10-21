@@ -10,7 +10,7 @@ export default function StudentQuote({quote, lessonBook, recentQuote, handleQuot
 
     function handleQuoteChange(e){
         setEditedQuote({...editedQuote, [e.target.name]: e.target.value})
-        console.log(editedQuote)
+        // console.log(editedQuote)
       }
 
       function handleQuoteSave(quote, editedQuote){

@@ -10,7 +10,7 @@ export default function StudentQuestion({question, handleQuestionDelete, lessonB
       
       function handleEditChange(e){
         setEditedDiscussionQuestion({...editedDiscussionQuestion, [e.target.name]: e.target.value})
-        console.log(editedDiscussionQuestion)
+        // console.log(editedDiscussionQuestion)
       }
 
       function handleSave(question, editedDiscussionQuestion){
