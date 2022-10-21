@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
-import { Navigate } from "react-router-dom"
-
+import { Link } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
+import FolloweeBookShelf from './FolloweeBookShelf';
 export default function Community({currentUser,setUser}) {
   const [allUsers, setAllUsers] = useState([])
   const [following, setFollowing] = useState([])
-
+  const [follows, setFollows] = useState([])
+  const [followeeBookshelf, setFolloweeBookshelf] = useState(false)
+  const [followeeSelected, setFolloweeSelected] = useState([])
     const logout = () => {
         setUser({username: ''})
         localStorage.removeItem('token')
@@ -22,21 +25,35 @@ export default function Community({currentUser,setUser}) {
         })
         .then(res => res.json())
         .then(data =>
-            filterUsers(data)
+            filterUsers(data),
         )
       }
     }, []) 
 
+    useEffect(() => {
+      let token = localStorage.getItem('token')
+      if(token){
+        fetch('/follows', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+        .then(res => res.json())
+        .then(data =>
+            setFollows(data),
+        )
+      }
+    }, []) 
 
+    
     function filterUsers(data){
       const rerenderedUsers = data.filter((el) => el.id !== currentUser.id);
       setAllUsers(rerenderedUsers)
     }
 
     function handleFollow(user){
-      console.log(user.id, currentUser.id)
       let token = localStorage.getItem('token')
-      if(user){
+      if(user && user.id !== currentUser.id){
       fetch('/follows', {
       method: 'POST',
       body: JSON.stringify({follower_id: currentUser.id, followee_id: user.id}),
@@ -45,11 +62,34 @@ export default function Community({currentUser,setUser}) {
         'Content-Type': 'application/json'
     }
   })
-  .then(res => res.json())
-  .then(data => 
-    setFollowing(data))
+  .then(res => {
+    if(res.ok){
+    res.json().then((data) => setFollows([data, ...follows]));
+  } else {
+    alert('already following')
+  }})
+  
 }
-console.log(following)
+    }
+
+    function handleFollowDelete(follow) {
+      let token = localStorage.getItem("token");
+      if(token) {
+        fetch(`/follows/${follow.id}`, {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        updatedFollows(follow);
+      }
+    }
+
+    function updatedFollows(follow) {
+      const rerenderedFollows = follows.filter(
+        (el) => el.id !== follow.id
+      );
+      setFollows(rerenderedFollows);
     }
 
     const allMembers = allUsers.map((user, i) => {
@@ -64,17 +104,40 @@ console.log(following)
           </div>
       )})
 
+    const allFavorites = follows.map((follow, i) => {
+      return (
+        <div key={i} className="each-favorite">
+          <img src={follow.image} />
+          <p onClick={() => revealFolloweeBookshelf(follow)}>{follow.username}</p>
+          <button onClick={() => handleFollowDelete(follow)}>unfollow</button>
+          </div>
+      )
+    })
+
+    function revealFolloweeBookshelf(follow) {
+      console.log(follow)
+      setFolloweeBookshelf(prev => !prev)
+      setFolloweeSelected(follow)
+    }
+
   return (
     <div>
-        <button onClick={logout}>Logout</button>
-        {currentUser.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
-        <div className='favorite-teachers'>
-          <p>Favorite Teachers</p>
-        </div>
-        <div className='members'>
-          <p>Our Members</p>
-        {allMembers}
-        </div>
+        <Link to="/"><button onClick={logout}>Logout</button></Link>
+      {currentUser.username.length > 0 ? <NavBar /> : null}
+      {followeeBookshelf ?
+      <>
+      <div className='favorite-teachers'>
+      <p>Favorite Teachers</p>
+      {allFavorites}
+    </div>
+    <div className='members'>
+      <p>Our Members</p>
+    {allMembers}
+    </div>
+    </>
+      : 
+      <FolloweeBookShelf followeeBookshelf={followeeBookshelf} setFolloweeBookshelf={setFolloweeBookshelf} followee={followeeSelected}/>}
+        
     </div>
   )
 }

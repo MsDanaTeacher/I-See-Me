@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import NavBar from './NavBar'
 import { Navigate } from "react-router-dom"
 import { send } from 'emailjs-com';
+// import * as emailjs from 'emailjs-com';
 
 export default function RecommendationForm({user, setUser}) {
     const [toSend, setToSend] = useState({

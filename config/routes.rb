@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   post '/logout', to: 'users#logout'
   delete '/deleteuserbook/:id', to: 'user_books#destroy'
   patch '/updateuserlesson/:id', to: 'user_books#update'
-  
+  # get '/allfollows/:id', to: 'follows#show'
+
 end
