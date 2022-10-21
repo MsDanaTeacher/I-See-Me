@@ -35,3 +35,5 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main
 
 gem 'active_model_serializers'
 
+gem "image_processing", ">= 1.2"
+
