@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   delete '/deleteuserbook/:id', to: 'user_books#destroy'
   patch '/updateuserlesson/:id', to: 'user_books#update'
   # get '/allfollows/:id', to: 'follows#show'
-
+  get '/followeeinformation/:id', to: 'users#showfollowee'
 end
