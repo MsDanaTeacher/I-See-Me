@@ -7,8 +7,8 @@ export default function Community({currentUser,setUser}) {
   const [allUsers, setAllUsers] = useState([])
   const [following, setFollowing] = useState([])
   const [follows, setFollows] = useState([])
-  const [followeeBookshelf, setFolloweeBookshelf] = useState(false)
-  const [followeeSelected, setFolloweeSelected] = useState([])
+  // const [followeeBookshelf, setFolloweeBookshelf] = useState(false)
+  // const [followeeSelected, setFolloweeSelected] = useState([])
     const logout = () => {
         setUser({username: ''})
         localStorage.removeItem('token')
@@ -25,7 +25,7 @@ export default function Community({currentUser,setUser}) {
         })
         .then(res => res.json())
         .then(data =>
-            filterUsers(data),
+            setAllUsers(data),
         )
       }
     }, []) 
@@ -46,10 +46,10 @@ export default function Community({currentUser,setUser}) {
     }, []) 
 
     
-    function filterUsers(data){
-      const rerenderedUsers = data.filter((el) => el.id !== currentUser.id);
-      setAllUsers(rerenderedUsers)
-    }
+    // function filterUsers(data){
+    //   const rerenderedUsers = data.filter((el) => el.id !== currentUser.id);
+    //   setAllUsers(rerenderedUsers)
+    // }
 
     function handleFollow(user){
       let token = localStorage.getItem('token')
@@ -108,25 +108,16 @@ export default function Community({currentUser,setUser}) {
       return (
         <div key={i} className="each-favorite">
           <img src={follow.image} />
-          <p onClick={() => revealFolloweeBookshelf(follow)}>{follow.username}</p>
+          <p>{follow.username}</p>
           <button onClick={() => handleFollowDelete(follow)}>unfollow</button>
           </div>
       )
     })
 
-    function revealFolloweeBookshelf(follow) {
-      console.log(follow)
-      setFolloweeBookshelf(prev => !prev)
-      setFolloweeSelected(follow)
-    }
-
   return (
     <div>
         <Link to="/"><button onClick={logout}>Logout</button></Link>
       {currentUser.username.length > 0 ? <NavBar /> : null}
-      {followeeBookshelf ?<FolloweeBookShelf followeeBookshelf={followeeBookshelf} setFolloweeBookshelf={setFolloweeBookshelf} followee={followeeSelected}/>
-      :
-      <>
       <div className='favorite-teachers'>
       <p>Favorite Teachers</p>
       {allFavorites}
@@ -135,7 +126,5 @@ export default function Community({currentUser,setUser}) {
       <p>Our Members</p>
     {allMembers}
     </div>
-    </>        
-}
 </div>
   )}

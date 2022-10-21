@@ -17,18 +17,18 @@ function App() {
   const [bookData, setBookData] = useState([]);
 
   useEffect(() => {
-    let token = localStorage.getItem("token");
-    if (token) {
+    // let token = localStorage.getItem("token");
+    // if (token) {
       fetch("/collection", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
       })
         .then((res) => res.json())
         .then((data) => {
           setBookData(data);
         });
-    }
+    // }
   }, []);
 
   //auto login
@@ -94,6 +94,10 @@ function App() {
         <Route
           path={`/userbooklesson/:userid/:bookid`}
           element={<UserBookLesson user={user} setUser={setUser} />}
+        />
+        <Route
+          path={`/followeebooklesson/:userid/:bookid`}
+          element={<FolloweeBookShelf user={user} setUser={setUser} />}
         />
       </Routes>
       <Footer />

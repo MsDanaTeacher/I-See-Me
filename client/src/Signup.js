@@ -36,7 +36,7 @@ export default function Signup({setUser}) {
         .then(data => {
             setUser(data.user)
             localStorage.setItem('token', data.token)
-           console.log(data.user)
+        //    console.log(data.user)
            
         })
         .catch(err => console.log(err))
