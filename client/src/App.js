@@ -11,6 +11,7 @@ import Profile from "./Profile";
 import RecommendationForm from "./RecommendationForm";
 import UserBookLesson from "./UserBookLesson";
 import FolloweeBookShelf from "./FolloweeBookShelf";
+import FolloweeBookLesson from "./FolloweeBookLesson";
 
 function App() {
   let [user, setUser] = useState({ username: "" });
@@ -99,10 +100,10 @@ function App() {
           path={`/followeebooklesson/:id`}
           element={<FolloweeBookShelf user={user} setUser={setUser} />}
         />
-        {/* <Route
-          path={`/followeebooklessondetails/:id`}
+        <Route
+          path={`/followeebooklessondetails/:id/:bookid`}
           element={<FolloweeBookLesson user={user} setUser={setUser} />}
-        /> */}
+        />
       </Routes>
       <Footer />
     </>

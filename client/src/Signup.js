@@ -60,32 +60,7 @@ export default function Signup({setUser}) {
             <input type="text" name="email" placeholder='email' value={signupData.email}/>
             <input type="text" name="username" placeholder='username' value={signupData.username}/>
             <input type="text" name="password" placeholder='password' value={signupData.password}/>
-            {/* <input type="file" name="image" accept="image/*" value={signupData.image}/> */}
-            <div class="dropdown">
-            <button class="dropbtn">
-                Country Flags
-            </button>
-              
-            <div class="dropdown-content">
-                <a href="#">
-                    <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200630132503/iflag.jpg"
-                    width="20" height="15"/> India</a>
-  
-                <a href="#">
-                    <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200630132504/uflag.jpg"
-                    width="20" height="15"/> USA</a>
-                <a href="#">
-                    <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200630132502/eflag.jpg"
-                    width="20" height="15"/> England</a>
-                <a href="#">
-                    <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200630132500/bflag.jpg"
-                    width="20" height="15"/> Brazil</a>
-            </div>
-        </div>
+            <input type="file" name="image" accept="image/*" value={signupData.image}/>
             <button>Signup</button>
             <Link to="/">Login</Link>
         </form>

@@ -12,6 +12,10 @@ class UserBooksController < ApplicationController
         render json: UserBook.find_by(user_id: @current_user.id, book_collection_id: params[:id])
     end
 
+    def followee_user_books
+        render json: UserBook.find_by(user_id: params[:id], book_collection_id: params[:bookid])
+    end
+
     def create
         user = UserBook.create!(user_id: @current_user.id, book_collection_id: params[:book_collection_id])
         render json: user

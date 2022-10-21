@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   patch '/updateuserlesson/:id', to: 'user_books#update'
   # get '/allfollows/:id', to: 'follows#show'
   get '/followeeinformation/:id', to: 'users#showfollowee'
+  get '/user_books/:id/:bookid', to: 'user_books#followee_user_books'
 end
