@@ -93,7 +93,7 @@ export default function Community({currentUser,setUser}) {
     }
 
     const allMembers = allUsers.map((user, i) => {
-      
+      if(user.id !== currentUser.id) {
       return (
         
          <div key={i} className="each-member">
@@ -102,7 +102,7 @@ export default function Community({currentUser,setUser}) {
           <p>{user.grade}</p>
           <button onClick={() => handleFollow(user)}>follow</button>
           </div>
-      )})
+      )}})
 
     const allFavorites = follows.map((follow, i) => {
       return (
@@ -124,7 +124,8 @@ export default function Community({currentUser,setUser}) {
     <div>
         <Link to="/"><button onClick={logout}>Logout</button></Link>
       {currentUser.username.length > 0 ? <NavBar /> : null}
-      {followeeBookshelf ?
+      {followeeBookshelf ?<FolloweeBookShelf followeeBookshelf={followeeBookshelf} setFolloweeBookshelf={setFolloweeBookshelf} followee={followeeSelected}/>
+      :
       <>
       <div className='favorite-teachers'>
       <p>Favorite Teachers</p>
@@ -134,10 +135,7 @@ export default function Community({currentUser,setUser}) {
       <p>Our Members</p>
     {allMembers}
     </div>
-    </>
-      : 
-      <FolloweeBookShelf followeeBookshelf={followeeBookshelf} setFolloweeBookshelf={setFolloweeBookshelf} followee={followeeSelected}/>}
-        
-    </div>
-  )
+    </>        
 }
+</div>
+  )}

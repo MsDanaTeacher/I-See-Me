@@ -36,6 +36,7 @@ export default function Signup({setUser}) {
         .then(data => {
             setUser(data.user)
             localStorage.setItem('token', data.token)
+           console.log(data.user)
            
         })
         .catch(err => console.log(err))
@@ -46,7 +47,16 @@ export default function Signup({setUser}) {
         <h1>Signup</h1>
         <form onChange={e => signUpChange(e)} onSubmit={e => signUpSubmit(e)}>
             <input type="text" name="name" placeholder='name' value={signupData.name}/>
-            <input type="text" name="grade" placeholder='grade' value={signupData.grade}/>
+            {/* <input type="text" name="grade" placeholder='grade' value={signupData.grade}/> */}
+            <select name="grade" value={signupData.grade}>
+                <option value="Select Grade">Select Grade</option>
+                <option value="Kindergarten Teacher">Kindergarten Teacher</option>
+                <option value="First Grade Teacher">First Grade Teacher</option>
+                <option value="Second Grade Teacher">Second Grade Teacher</option>
+                <option value="Third Grade Teacher">Third Grade Teacher</option>
+                <option value="Fourth Grade Teacher">Fourth Grade Teacher</option>
+                <option value="Fifth Grade Teacher">Fifth Grade Teacher</option>
+             </select>
             <input type="text" name="email" placeholder='email' value={signupData.email}/>
             <input type="text" name="username" placeholder='username' value={signupData.username}/>
             <input type="text" name="password" placeholder='password' value={signupData.password}/>

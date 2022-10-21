@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import NavBar from './NavBar'
 import { Navigate } from "react-router-dom"
-import { send } from 'emailjs-com';
-// import * as emailjs from 'emailjs-com';
+// import { send } from 'emailjs-com';
+import * as emailjs from 'emailjs-com';
 
 export default function RecommendationForm({user, setUser}) {
     const [toSend, setToSend] = useState({
@@ -22,18 +22,18 @@ export default function RecommendationForm({user, setUser}) {
 
       const handleSubmit = (e) => {
         e.preventDefault();
-        send(
+        emailjs.sendForm(
           'service_pkqmftw',
           'template_rssolke',
-          toSend,
+          e.target,
           'hUeoGf71JDOOy-o_v'
         )
-          .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-          })
-          .catch((err) => {
-            console.log('FAILED...', err);
+          .then((result) => {
+            alert('email sent successfully');
+          }, (error) => {
+            alert('error sending email');
           });
+          e.target.reset();
       };
 
   return (

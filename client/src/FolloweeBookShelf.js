@@ -11,7 +11,7 @@ export default function FolloweeBookShelf({followeeBookshelf, setFolloweeBookshe
         <button onClick={handleButtonClick}>back</button>
         FolloweeBookShelf
         <div className='book-tiles'>
-        {followeeBooks.map((el, i) => {
+        {/* {followeeBooks.map((el, i) => {
             return (
                 <div key={i} className="followee-books">
                    <p>{el.title}</p>
@@ -19,7 +19,7 @@ export default function FolloweeBookShelf({followeeBookshelf, setFolloweeBookshe
                    <img src={el.image} height="200px" width="200px"/><br />
                 </div>
             )
-        })}
+        })} */}
         </div>
     </div>
   )
