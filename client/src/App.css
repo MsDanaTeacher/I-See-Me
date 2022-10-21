@@ -34,9 +34,16 @@
   padding: 2%;
 }
 
+.each-favorite {
+  padding: 2%;
+}
+
 .footer {
   bottom: 0;
   width: 100%;
   height: 2.5rem;
 }
 
+.followee-books {
+  padding: 1%;
+}
