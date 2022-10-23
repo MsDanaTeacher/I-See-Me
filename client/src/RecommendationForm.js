@@ -38,7 +38,7 @@ export default function RecommendationForm({user, setUser}) {
 
   return (
     <div>
-        <button onClick={logout}>Logout</button>
+        <button onClick={logout} className='logout-button'>Logout</button>
         {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
         <form style={{border: "2px solid blue", padding: "20px", margin: "20px", width: "500px"}} onSubmit={handleSubmit}>
             <p>We’d love to hear your book recommendations!</p>

@@ -36,18 +36,19 @@ export default function Login({setUser}) {
   }
 
   return (
-    <div>
-      <h1>I SEE ME</h1>
-      <p>Please login to your account</p>
+    <div className='login'>
       <form onChange={e => loginChange(e)} onSubmit={e => loginSubmit(e)}>
-        <input type="text" name="username" placeholder='username' value={loginData.username}/>
-        <input type="password" name="password" placeholder='password' value={loginData.password}/>
-        <button>Login</button>
-      </form>
-      <div>
-        <p>Don't have an account?</p>
-        <Link to="/signup">Sign Up</Link>
-      </div>
+        <img src={process.env.PUBLIC_URL+"images/free_icon_1.svg"} height="40px" width="40px" className='login-input-spacing'/>
+        <h1 className='login-input-spacing'>I SEE ME</h1>
+        <p className='please-login'>Please login to your account</p>
+        <p className='login-input-spacing, username-input'>Username</p>
+        <input type="text" name="username" value={loginData.username}className='login-input-spacing, login-input-width'/><br />
+        <p className='login-input-spacing, username-input'>Password</p>
+        <input type="password" name="password" value={loginData.password}className='login-input-spacing, login-input-width'/><br />
+        <button className='login-button'>Login</button>
+        <p className='login-input-spacing'>Don't have an account?</p>
+        <Link to="/signup" className='sign-up-button'>Sign Up</Link>
+      </form>    
     </div>
   )
 }

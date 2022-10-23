@@ -39,7 +39,7 @@ export default function SearchBooksPage({user,setUser, bookData}) {
     
   return (
     <div>
-        <button onClick={logout}>Logout</button>
+        <button onClick={logout} className='logout-button'>Logout</button>
         {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
         <SearchBar search={search} setSearch={setSearch}/>
         <select onChange={handleFilteringBooks} value={filteredBooks}>
