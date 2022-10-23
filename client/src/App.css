@@ -282,7 +282,7 @@ color: white;
 }
 
 .image-navbar {
-  margin-right: 5%
+  margin-right: 5%;
 }
 
 .navbar-names {
@@ -337,4 +337,143 @@ color: white;
 .image-navbar {
   width: 3%;
   height: 3%;
+}
+
+.teacher-picks-wrapper {
+  display: flex;
+  margin-top: 3%;
+}
+.teacher-picks-title-wrapper {
+  /* float: right; */
+  width: 15vw;
+}
+.teacher-picks-title-line {
+  color: #DBAB00;
+  font-family: "Cherry Cream Soda";
+  margin-left: 20%;
+}
+
+.teacher-picks-title {
+  color: #DBAB00;
+  font-family: "Cherry Cream Soda";
+  text-align: right;
+  font-size: 1.3rem;
+  
+}
+
+.teacher-picks-boxes {
+  width: 30vw;
+  height: 45vh;
+  background-color: #DBAB00;
+  color: white;
+  /* margin: 5vw; */
+  margin-top: 1vw;
+  margin-left: 9vw;
+  font-family: "Cherry Cream Soda";
+  font-size: 1.3rem;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Cherry Cream Soda";
+  color: white;
+  width: 90%;
+  font-size: 4rem;
+  margin-top: 10%;
+}
+
+.teacher-reviews-one{
+  text-align: left;
+  padding-left: 8%;
+  padding-right: 15%;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+  padding-top: 8%;
+}
+
+.teacher-reviews-two{
+  text-align: left;
+  padding-left: 8%;
+  padding-right: 50%;
+  padding-bottom: 0%;
+  margin-top: 18%;
+
+}
+
+.teacher-book-review-picture-one {
+  float: right;
+  overflow:visible; 
+  margin-left: 15%;
+  margin-top: 0%;
+  padding-top: 0%;
+  height: 15vw;
+  width: auto;
+  transform: translate(-.09%, -60%);
+}
+
+.teacher-book-review-picture-two {
+  float: right;
+  margin-top: 10%;
+  height: 15vw;
+  width: auto;
+  transform: translate(-.09%, -75%);
+}
+
+.banned-books-wrapper {
+  display: flex;
+  margin-top: 5%;
+  background-color: #FFD12F; 
+  height: 35vw;
+  width: 100vw;
+}
+
+.banned-books-title {
+  color: white;
+  font-family: "Cherry Cream Soda";
+  font-size: 1.3rem;
+  padding: 5%;
+}
+
+.monthly-themed-books {
+  height: 40vw;
+  width: 100vw;
+  display: flex;
+}
+
+.monthly-picks-title {
+  color: #DBAB00;
+  font-family: "Cherry Cream Soda";
+  font-size: 1.3rem;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.monthly-boxes-one {
+  width: 30%;
+  margin: auto;
+  margin-top: 2.7%;
+}
+
+.monthly-boxes-two {
+  width: 50%;
+  height: 80%;
+  margin: auto;
+  margin-right: 10%;
+  background-color: #DBAB00;
+
+}
+
+.monthly-themed-book-sizing {
+  height: 20vh;
+  width: auto;
+  margin: 5%;
+  box-shadow: 6px 5px 5px #00000025;
+}
+
+.monthly-book-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

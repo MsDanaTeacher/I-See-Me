@@ -3,10 +3,16 @@ import { useParams, Link } from 'react-router-dom'
 import FolloweeBookLesson from './FolloweeBookLesson';
 import NavBar from "./NavBar";
 
-export default function FolloweeBookShelf({user}) {
+export default function FolloweeBookShelf({user, setUser}) {
   const params = useParams();
   const [followeeBookshelf, setFolloweeBookshelf] = useState({})
   const [bookshelfBooks, setBookshelfBooks] = useState([])
+
+  const logout = () => {
+    setUser({username: ''})
+    localStorage.removeItem('token')
+}
+
   useEffect(() => {
   let token = localStorage.getItem("token");
   if(token){
@@ -32,10 +38,11 @@ const bookshelf = bookshelfBooks.map((book, i) => {
 )})
   return (
     <div>
+      <button onClick={logout} className='logout-button'>Logout</button>
       {user.username.length > 0 ? <NavBar /> : null}
     
       <div className='book-tiles'>
-        
+      <h1>{followeeBookshelf.username}'s Bookshelf</h1>
          {bookshelf}
       </div>
       </div>
