@@ -48,7 +48,7 @@
   padding: 1%;
 }
 
-.dropbtn {
+/* .dropbtn {
   background-color: #4CAF50;
   color: white;
   padding: 16px;
@@ -89,4 +89,252 @@
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+} */
+
+/* footer */
+
+footer div{
+background: #FFD12F;
+font-family: "Cherry Cream Soda";
+color: white;
+}
+/* login styling */
+.login {
+  background-image: url("https://thewilddetectives.com/wp-content/uploads/2020/02/kids-in-the-cliff.png");
+  background-size: cover;
+  background-color: white;
+  height: 91vh;
+  opacity: .9;
+  overflow: hidden;
+  display: flex;
+}
+
+.login form {
+  margin:auto;
+  text-align: center;
+  font-family: "Cherry Cream Soda";
+  color: black;
+}
+
+.sign-up-button {
+  color: black;
+  border: 2px solid #FFD12F;
+  padding-right: 30%;
+  padding-left: 30%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.sign-up-button:hover {
+  color: #FFD12F;
+}
+
+.login-input-spacing {
+  margin-top: 3%;
+}
+
+.please-login {
+  margin-top: 3%;
+  font-size: 90%;
+}
+
+.login-button {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border: none;
+  width: 100%;
+  background-color: #FFD12F;
+}
+
+.username-input {
+  padding-right: 100%;
+  margin-top: 3%;
+}
+
+.login-input-width {
+  width: 100%;
+  outline: none;
+  font-family: "Cherry Cream Soda";
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: black;
+  border-width: 1px;
+  background: transparent;
+}
+
+
+
+/* signup styling */
+
+.signup {
+  background-image: url("readimage.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 55% 100%;
+  background-color: white;
+  height: 91vh;
+  opacity: .9;
+  overflow: hidden;
+  display: flex;
+}
+
+.signup-form {
+  
+  text-align: center;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  margin-left: 11%;
+  margin-top: 8%;
+  width: 35vw;
+}
+
+.name-grade {
+  /* display: flex; */
+  width: 20vw;
+  margin: auto;
+  /* padding-right: 90%; */
+  /* margin-right: 40%; */
+  text-align: center;
+  
+}
+
+.signup-button {
+  margin-top: 10%;
+  margin-bottom: 7%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border: none;
+  width: 50%;
+  background-color: #FFD12F;
+}
+
+.signup-login-button {
+  color: black;
+  border: 2px solid #FFD12F;
+  padding-right: 15%;
+  padding-left: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  /* margin-top: 0; */
+  
+}
+
+.signup-login-button:hover {
+  color: #FFD12F;
+}
+
+.signup-wrapper {
+  text-align: center;
+}
+
+.select {
+  margin-left: 2%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: black;
+  border-width: 1px;
+  width: 90%;
+  background: transparent;
+  outline: none;
+  margin-bottom: 3%;
+}
+
+.select-grade {
+  margin-left: 2%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: black;
+  border-width: 1px;
+  width: 90%;
+  background: transparent;
+  outline: none;
+  margin-bottom: 8%;
+  margin-top: 8%;
+}
+
+.email-label {
+  padding-right: 70%;
+}
+
+.username-label {
+  padding-right: 58%;
+}
+
+.password-label {
+  padding-right: 58%;
+}
+
+.image-label {
+  padding-right: 70%;
+}
+
+
+
+.nav-bar {
+  display: flex;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  width: 100vw;
+  padding-left: 6%;
+}
+
+.image-navbar {
+  margin-right: 5%
+}
+
+.navbar-names {
+  color: black;
+  padding-right: 4%;
+  padding-top: .7%;
+}
+
+.navbar-home {
+  padding-left: 20%;
+  padding-right: 5%;
+  color: black;
+  padding-top: .7%;
+}
+
+.navbar-home:hover {
+  color: #FFD12F;
+}
+
+.navbar-names:hover {
+  color: #FFD12F;
+}
+
+.hello-teacher {
+  font-family: "Cherry Cream Soda";
+  color: black;
+  padding-left: 7.5%;
+  color: #FFD12F;
+}
+
+.user-home-illustration {
+  width: 100vw;
+  height: auto;
+}
+
+
+
+/* logout button */
+.logout-button {
+  border: none;
+  float: right;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  background: transparent;
+  padding-right: 1%;
+}
+
+.logout-button:hover {
+  color: #FFD12F;
+}
+
+.image-navbar {
+  width: 3%;
+  height: 3%;
 }

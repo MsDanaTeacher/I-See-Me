@@ -1,9 +1,24 @@
 import React from 'react'
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+  MDBIcon,
+  MDBBtn
+} from 'mdb-react-ui-kit';
 
 export default function Footer() {
 const year = new Date().getFullYear();
 
   return (
-    <footer style={{backgroundColor: "yellow", padding: "20px"}} className="footer">{`© ${year} Dana Lobell`}</footer>
+    <>
+    <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
+      <div className='text-center p-4' style={{ backgroundColor: '#FFD12F' }}>
+        © {year} Dana Lobell
+      </div>   
+    </MDBFooter>
+    
+    </>
   )
 }

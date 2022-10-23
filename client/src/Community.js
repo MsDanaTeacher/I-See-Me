@@ -116,7 +116,7 @@ export default function Community({currentUser,setUser}) {
 
   return (
     <div>
-        <Link to="/"><button onClick={logout}>Logout</button></Link>
+        <Link to="/"><button onClick={logout} className='logout-button'>Logout</button></Link>
       {currentUser.username.length > 0 ? <NavBar /> : null}
       <div className='favorite-teachers'>
       <p>Favorite Teachers</p>

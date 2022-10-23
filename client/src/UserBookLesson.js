@@ -201,7 +201,7 @@ export default function UserBookLesson({ user, setUser }) {
 
   return (
     <div>
-      <button onClick={logout}>Logout</button>
+      <button onClick={logout} className='logout-button'>Logout</button>
       {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
       <Link to="/profile">back</Link>
       <br />

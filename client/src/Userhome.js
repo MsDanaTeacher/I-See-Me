@@ -12,10 +12,10 @@ export default function Userhome({user, setUser}) {
     
   return (
     <div>
-      <button onClick={logout}>Logout</button>
+      <button onClick={logout} className='logout-button'>Logout</button>
       {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
-        <h1>Hi, {user.name}</h1>
-        <img src="https://images.squarespace-cdn.com/content/v1/5d7baa4b6e56e30ccf013169/1626710980130-1LWGVPTNA9N1K3GWND8N/CR-83.jpg?format=2500w" height="1000px" width="1500px"/>
+        <h4 className='hello-teacher'>Hi, {user.username}!</h4>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d7baa4b6e56e30ccf013169/1626710980130-1LWGVPTNA9N1K3GWND8N/CR-83.jpg?format=2500w" className='user-home-illustration'/>
         <div>
           <p>_____________________</p>
           <p>Teacher Picks</p>
