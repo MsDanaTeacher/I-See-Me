@@ -40,14 +40,15 @@ export default function RecommendationForm({user, setUser}) {
     <div>
         <button onClick={logout} className='logout-button'>Logout</button>
         {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
-        <form style={{border: "2px solid blue", padding: "20px", margin: "20px", width: "500px"}} onSubmit={handleSubmit}>
-            <p>We’d love to hear your book recommendations!</p>
-            <label>Title <br/><input type="text" name="title" value={toSend.title} onChange={handleChange}/></label><br/>
-            <label>Author <br/><input type="text" name="author" value={toSend.author} onChange={handleChange}/></label><br/>
-            <label>What makes this book special?<br/><input type="text" name="special" value={toSend.special} onChange={handleChange}/></label><br/>
-            <button type="submit">Submit</button>
+        <form onSubmit={handleSubmit} className='recommendation-form-overlay'>
+            <p className='form-title'>We’d love to hear your book recommendations!</p>
+            <label className='recommendation-form-first-two-inputs'>Title <br/><input type="text" name="title" value={toSend.title} onChange={handleChange} className='recommendation-form-first-two-inputs-boxes'/></label><br/>
+            <label className='recommendation-form-first-two-inputs'>Author <br/><input type="text" name="author" value={toSend.author} onChange={handleChange} className='recommendation-form-first-two-inputs-boxes'/></label><br/>
+            <label className='recommendation-form-first-two-inputs'>What makes this book special?<br/><input type="text" name="special" value={toSend.special} onChange={handleChange} className='recommendation-form-paragraph'/></label><br/>
+            <button type="submit" className='submit-button'>Submit</button>
         </form>
-        <img src="https://i.pinimg.com/564x/b6/b9/ac/b6b9ac34c0e6d186cd96efa005be5b50--childrens-book-illustration-book-illustrations.jpg" height="400px" width="450px"/>
-    </div>
+        <img src="images/girlanddog.png" className='recommendation-form-image'/>
+        </div>
+
   )
 }
