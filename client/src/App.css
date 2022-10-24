@@ -634,7 +634,158 @@ color: white;
   color: black;
 }
 
+.add-to-library:hover{
+  color: white;
+}
+
 .add-to-library-book-image{
   margin-left: 45%;
- 
+}
+
+.user-bookshelf-name {
+  background-color: #FFD12F;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  padding: 1%;
+  padding-left: 4%;
+}
+
+.bookshelf-book-picture {
+  height: 8vh;
+  padding-right: 1%;
+}
+
+.user-bookshelf-back {
+  background-color: #FFD12F;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  padding: 1.5%;
+  padding-left: 6%;
+}
+
+.user-bookshelf-back:hover {
+  color: white;
+}
+
+.user-bookshelf-books {
+  height: 30vh;
+  box-shadow: 6px 5px 5px #00000025;
+  margin: auto;
+}
+
+.user-bookshelf-books-titles {
+  width: 15vw;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  margin: auto;
+  text-align: center;
+}
+
+.remove-from-shelf {
+  width: 15vw;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  margin: auto;
+  text-align: center;
+}
+
+.remove-from-shelf:hover {
+  color: #FFD12F;
+}
+
+.user-book-tiles-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  justify-content: center;
+  margin: auto;
+  margin-top: 3%;
+  overflow: hidden;
+  overflow: scroll;
+  height: 40vw;
+  /* border: 2px solid black; */
+  margin-bottom: 3%;
+}
+
+.user-bookshelf-books-book-image {
+  height: 5vh;
+  margin: auto;
+  display: block;
+}
+
+.each-user-book-spacing {
+  margin: 2%;
+}
+
+.create-a-lesson {
+  text-align: center;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  margin-bottom: 0;
+}
+
+.create-a-lesson:hover {
+  color: #FFD12F;
+}
+
+/* .bookshelf-background-image {
+  background-image: url("https://thewilddetectives.com/wp-content/uploads/2020/02/kids-in-the-cliff.png");
+  background-position: center;
+  width: 100vw;
+  background-repeat: no-repeat;
+
+} */
+
+.whole-lesson-wrapper {
+  width: 90vw;
+  margin: auto;
+}
+
+.book-lesson-image {
+  box-shadow: 6px 5px 5px #00000025;
+  width: 15vw;
+  margin-left: 5%;
+}
+
+.questions-and-quotes-divs {
+  display: flex;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  justify-content: center;
+}
+
+.questions-quotes-student-work {
+  margin: 5%;
+  /* text-align: center; */
+}
+
+.add-discussion-questions-form {
+  display: flex;
+  
+}
+
+.lesson-inputs {
+  border:none;
+  border-bottom: 1px solid black;
+  margin-right: 2%;
+  margin-bottom: 6%;
+  outline: none;
+}
+
+.add-questions-quotes{
+  border: none;
+  padding: 1%;
+  height: 4vh;
+  background: transparent;
+  border: 2px solid black;
+}
+
+.add-questions-quotes:hover{
+  color: #FFD12F;
 }

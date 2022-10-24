@@ -33,10 +33,12 @@ export default function StudentQuote({quote, lessonBook, recentQuote, handleQuot
 
   return (
     <div>
+      <div className="add-discussion-questions-form">
         {editQuoteClicked?<input type="text" name="student_quote_edited" value={editedQuote.student_quote_edited} placeholder={quote.student_quote} onChange={handleQuoteChange}/>:<li>{quote.student_quote}</li>}
         
-            {editQuoteClicked? <button onClick={() => handleQuoteSave(quote, editedQuote)}>Save</button> :<button onClick={handleEditQuoteClick}>Edit</button>}
-            <button onClick={() => handleQuoteDelete(quote)}>Delete</button>
+            {editQuoteClicked? <button onClick={() => handleQuoteSave(quote, editedQuote)} className="add-questions-quotes">Save</button> :<button onClick={handleEditQuoteClick} className="add-questions-quotes">Edit</button>}
+            <button onClick={() => handleQuoteDelete(quote)} className="add-questions-quotes">Delete</button>
+            </div>
     </div>
   )
 }

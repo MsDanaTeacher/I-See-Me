@@ -23,8 +23,8 @@ function handleClick(book){
     const bookCollection = books;
     const allBooks = bookCollection.map((book, i) => 
        <div key={i} className="books"><img src={book.image} className='book-tiles-each'/>
-        <p className='add-to-library'>Add to library</p>
-        <img src={process.env.PUBLIC_URL+"images/free_icon_1.svg"} height="40px" width="40px" onClick={() => handleClick(book)} className='add-to-library-book-image'/>
+        <p className='add-to-library' onClick={() => handleClick(book)}>Add to library</p>
+        <img src={process.env.PUBLIC_URL+"images/free_icon_1.svg"} height="40px" width="40px" className='add-to-library-book-image'/>
         </div>
     );
 
