@@ -41,9 +41,10 @@ export default function SearchBooksPage({user,setUser, bookData}) {
     <div>
         <button onClick={logout} className='logout-button'>Logout</button>
         {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
+        <div className='search-and-filter-books'>
         <SearchBar search={search} setSearch={setSearch}/>
-        <select onChange={handleFilteringBooks} value={filteredBooks}>
-          <option value="Select">Select</option>
+        <select onChange={handleFilteringBooks} value={filteredBooks} className='selection-two'>
+          <option value="Select">Subject</option>
           <option value="Girls in Tech">Girls in Tech</option>
           <option value="LGBTQIA+">LGBTQIA+</option>
           <option value="Families">Families</option>
@@ -57,10 +58,11 @@ export default function SearchBooksPage({user,setUser, bookData}) {
           <option value="Jewish">Jewish</option>
           <option value="Latinx">Latinx</option>
         </select>
+        </div>
         <br />
-        BUILD YOUR LIBRARY!
-        <BookTiles books={displayedBooks} user={user}/>
-        <p>Have a book recommendation? Share it <Link to="/bookrecommendation">here!</Link></p>
+        <div className='wrapper-for-book-search-box'><div className='build-your-library'><h3>BUILD YOUR LIBRARY!</h3></div>
+        <BookTiles books={displayedBooks} user={user}/></div>
+        <h3 className='book-recommendation-form-link'>Have a book recommendation? Share it <Link to="/bookrecommendation" className='share-here'>here!</Link></h3>
     </div>
   )
 }
