@@ -97,19 +97,19 @@ export default function Community({currentUser,setUser}) {
       return (
         
          <div key={i} className="each-member">
-          <img src={user.image} />
-          <Link to={`/followeebooklesson/${user.id}`}><p>{user.username}</p></Link>
+          {/* <img src={user.image} /> */}
+          <Link to={`/followeebooklesson/${user.id}`}><p className='followee-follower-username'>{user.username}</p></Link>
           <p>{user.grade}</p>
-          <button onClick={() => handleFollow(user)}>follow</button>
+          <button onClick={() => handleFollow(user)} className='follow-unfollow-button'>follow</button>
           </div>
       )}})
 
     const allFavorites = follows.map((follow, i) => {
       return (
         <div key={i} className="each-favorite">
-          <img src={follow.image} />
-          <Link to={`/followeebooklesson/${follow.id}`}><p>{follow.username}</p></Link>
-          <button onClick={() => handleFollowDelete(follow)}>unfollow</button>
+          {/* <img src={follow.image} /> */}
+          <Link to={`/followeebooklesson/${follow.id}`}><p className='followee-follower-username'>{follow.username}</p></Link>
+          <button onClick={() => handleFollowDelete(follow)} className='follow-unfollow-button'>unfollow</button>
           </div>
       )
     })
@@ -118,13 +118,21 @@ export default function Community({currentUser,setUser}) {
     <div>
         <Link to="/"><button onClick={logout} className='logout-button'>Logout</button></Link>
       {currentUser.username.length > 0 ? <NavBar /> : null}
+      <div className='follower-followee-divs'>
       <div className='favorite-teachers'>
-      <p>Favorite Teachers</p>
+        <div><h4 className='favorite-teachers-title'>Favorite Teachers</h4>
+      <div className='favorite-teachers'>
       {allFavorites}
     </div>
+    </div>
+    </div>
     <div className='members'>
-      <p>Our Members</p>
+    <div><h4 className='favorite-teachers-title'>Our Members</h4>
+    <div className='members'>
     {allMembers}
     </div>
+    </div>
+    </div>
+</div>
 </div>
   )}

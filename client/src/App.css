@@ -2,35 +2,6 @@
   padding: 1%;
 }
 
-.members {
-  display: flex;
-  width: 50vw;
-  height: 30vh;
-  flex-wrap: wrap;
-  margin: auto;
-  border: 2px solid blue;
-  overflow: scroll;
-}
-
-.favorite-teachers {
-  display: flex;
-  width: 50vw;
-  height: 15vh;
-  flex-wrap: wrap;
-  margin: auto;
-  border: 2px solid red;
-  overflow: scroll;
-  margin-top: 2%;
-  margin-bottom: 1%;
-}
-.each-member {
-  padding: 2%;
-}
-
-.each-favorite {
-  padding: 2%;
-}
-
 .footer {
   bottom: 0;
   width: 100%;
@@ -41,55 +12,12 @@
   padding: 1%;
 }
 
-/* .dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 
-      0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-} */
-
 /* footer */
 
-footer div{
-background: #FFD12F;
-font-family: "Cherry Cream Soda";
-color: white;
+footer div {
+  background: #ffd12f;
+  font-family: "Cherry Cream Soda";
+  color: white;
 }
 /* login styling */
 .login {
@@ -97,13 +25,13 @@ color: white;
   background-size: cover;
   background-color: white;
   height: 91vh;
-  opacity: .9;
+  opacity: 0.9;
   overflow: hidden;
   display: flex;
 }
 
 .login form {
-  margin:auto;
+  margin: auto;
   text-align: center;
   font-family: "Cherry Cream Soda";
   color: black;
@@ -111,7 +39,7 @@ color: white;
 
 .sign-up-button {
   color: black;
-  border: 2px solid #FFD12F;
+  border: 2px solid #ffd12f;
   padding-right: 30%;
   padding-left: 30%;
   padding-top: 5%;
@@ -119,7 +47,7 @@ color: white;
 }
 
 .sign-up-button:hover {
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
 .login-input-spacing {
@@ -136,7 +64,7 @@ color: white;
   margin-bottom: 10%;
   border: none;
   width: 100%;
-  background-color: #FFD12F;
+  background-color: #ffd12f;
 }
 
 .username-input {
@@ -156,8 +84,6 @@ color: white;
   background: transparent;
 }
 
-
-
 /* signup styling */
 
 .signup {
@@ -167,13 +93,12 @@ color: white;
   background-size: 55% 100%;
   background-color: white;
   height: 91vh;
-  opacity: .9;
+  opacity: 0.9;
   overflow: hidden;
   display: flex;
 }
 
 .signup-form {
-  
   text-align: center;
   font-family: "Cherry Cream Soda";
   color: black;
@@ -189,7 +114,6 @@ color: white;
   /* padding-right: 90%; */
   /* margin-right: 40%; */
   text-align: center;
-  
 }
 
 .signup-button {
@@ -199,22 +123,21 @@ color: white;
   padding-bottom: 1%;
   border: none;
   width: 50%;
-  background-color: #FFD12F;
+  background-color: #ffd12f;
 }
 
 .signup-login-button {
   color: black;
-  border: 2px solid #FFD12F;
+  border: 2px solid #ffd12f;
   padding-right: 15%;
   padding-left: 15%;
   padding-top: 2%;
   padding-bottom: 2%;
   /* margin-top: 0; */
-  
 }
 
 .signup-login-button:hover {
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
 .signup-wrapper {
@@ -264,8 +187,6 @@ color: white;
   padding-right: 70%;
 }
 
-
-
 .nav-bar {
   display: flex;
   font-family: "Cherry Cream Soda";
@@ -281,37 +202,35 @@ color: white;
 .navbar-names {
   color: black;
   padding-right: 4%;
-  padding-top: .7%;
+  padding-top: 0.7%;
 }
 
 .navbar-home {
   padding-left: 20%;
   padding-right: 5%;
   color: black;
-  padding-top: .7%;
+  padding-top: 0.7%;
 }
 
 .navbar-home:hover {
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
 .navbar-names:hover {
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
 .hello-teacher {
   font-family: "Cherry Cream Soda";
   color: black;
   padding-left: 7.5%;
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
 .user-home-illustration {
   width: 100vw;
   height: auto;
 }
-
-
 
 /* logout button */
 .logout-button {
@@ -324,7 +243,7 @@ color: white;
 }
 
 .logout-button:hover {
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
 .image-navbar {
@@ -341,23 +260,22 @@ color: white;
   width: 15vw;
 }
 .teacher-picks-title-line {
-  color: #DBAB00;
+  color: #dbab00;
   font-family: "Cherry Cream Soda";
   margin-left: 20%;
 }
 
 .teacher-picks-title {
-  color: #DBAB00;
+  color: #dbab00;
   font-family: "Cherry Cream Soda";
   text-align: right;
   font-size: 1.3rem;
-  
 }
 
 .teacher-picks-boxes {
   width: 30vw;
   height: 45vh;
-  background-color: #DBAB00;
+  background-color: #dbab00;
   color: white;
   /* margin: 5vw; */
   margin-top: 1vw;
@@ -377,7 +295,7 @@ color: white;
   margin-top: 10%;
 }
 
-.teacher-reviews-one{
+.teacher-reviews-one {
   text-align: left;
   padding-left: 8%;
   padding-right: 15%;
@@ -386,24 +304,23 @@ color: white;
   padding-top: 8%;
 }
 
-.teacher-reviews-two{
+.teacher-reviews-two {
   text-align: left;
   padding-left: 8%;
   padding-right: 50%;
   padding-bottom: 0%;
   margin-top: 18%;
-
 }
 
 .teacher-book-review-picture-one {
   float: right;
-  overflow:visible; 
+  overflow: visible;
   margin-left: 15%;
   margin-top: 0%;
   padding-top: 0%;
   height: 15vw;
   width: auto;
-  transform: translate(-.09%, -60%);
+  transform: translate(-0.09%, -60%);
 }
 
 .teacher-book-review-picture-two {
@@ -411,13 +328,13 @@ color: white;
   margin-top: 10%;
   height: 15vw;
   width: auto;
-  transform: translate(-.09%, -75%);
+  transform: translate(-0.09%, -75%);
 }
 
 .banned-books-wrapper {
   display: flex;
   margin-top: 5%;
-  background-color: #FFD12F; 
+  background-color: #ffd12f;
   height: 35vw;
   width: 100vw;
 }
@@ -436,7 +353,7 @@ color: white;
 }
 
 .monthly-picks-title {
-  color: #DBAB00;
+  color: #dbab00;
   font-family: "Cherry Cream Soda";
   font-size: 1.3rem;
   width: 60%;
@@ -454,8 +371,7 @@ color: white;
   height: 80%;
   margin: auto;
   margin-right: 10%;
-  background-color: #DBAB00;
-
+  background-color: #dbab00;
 }
 
 .monthly-themed-book-sizing {
@@ -478,15 +394,15 @@ color: white;
 }
 
 .recommendation-form-overlay {
-    position: fixed; /* Sit on top of the page content */
-    background-color: #ffd22fba;
+  position: fixed; /* Sit on top of the page content */
+  background-color: #ffd22fba;
   width: 30vw;
   height: 60vh;
-    z-index: 2;
-    margin-left: 20vw;
-    margin-top: 6vw;
-    text-align: center;
-    font-family: "Cherry Cream Soda";
+  z-index: 2;
+  margin-left: 20vw;
+  margin-top: 6vw;
+  text-align: center;
+  font-family: "Cherry Cream Soda";
   color: black;
 }
 
@@ -512,7 +428,7 @@ color: white;
   margin-top: 3%;
 }
 
-.recommendation-form-first-two-inputs-boxes{
+.recommendation-form-first-two-inputs-boxes {
   margin-top: 3%;
   background: transparent;
   border: none;
@@ -590,10 +506,9 @@ color: white;
   height: 40vw;
   overflow: hidden;
   overflow: scroll;
-  background-color: #FFD12F;
+  background-color: #ffd12f;
   padding-top: 3vh;
 }
-
 
 .book-tiles {
   display: flex;
@@ -622,28 +537,28 @@ color: white;
 
 .share-here {
   color: black;
-  text-decoration: underline #FFD12F;
+  text-decoration: underline #ffd12f;
 }
 .share-here:hover {
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
-.add-to-library{
+.add-to-library {
   text-align: center;
   font-family: "Cherry Cream Soda";
   color: black;
 }
 
-.add-to-library:hover{
+.add-to-library:hover {
   color: white;
 }
 
-.add-to-library-book-image{
+.add-to-library-book-image {
   margin-left: 45%;
 }
 
 .user-bookshelf-name {
-  background-color: #FFD12F;
+  background-color: #ffd12f;
   font-family: "Cherry Cream Soda";
   color: black;
   margin-top: 3%;
@@ -659,7 +574,7 @@ color: white;
 }
 
 .user-bookshelf-back {
-  background-color: #FFD12F;
+  background-color: #ffd12f;
   font-family: "Cherry Cream Soda";
   color: black;
   margin-top: 3%;
@@ -696,7 +611,7 @@ color: white;
 }
 
 .remove-from-shelf:hover {
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
 .user-book-tiles-wrapper {
@@ -731,7 +646,7 @@ color: white;
 }
 
 .create-a-lesson:hover {
-  color: #FFD12F;
+  color: #ffd12f;
 }
 
 /* .bookshelf-background-image {
@@ -767,36 +682,180 @@ color: white;
 
 .add-discussion-questions-form {
   display: flex;
-  
 }
 
 .lesson-inputs {
-  border:none;
+  border: none;
   border-bottom: 1px solid black;
   margin-right: 2%;
   margin-bottom: 6%;
   outline: none;
 }
 
-.add-questions-quotes{
+.add-questions-quotes {
   border: none;
   padding: 1%;
   height: 4vh;
   background: transparent;
   /* border: 2px solid black; */
-  background-color: #FFD12F;
+  background-color: #ffd12f;
   margin: 1%;
   margin-right: 4%;
   margin-left: 4%;
 }
 
-.add-questions-quotes:hover{
+.add-questions-quotes:hover {
   color: white;
 }
 
 .student-work-coming-soon {
   padding-top: 20%;
-  background-color: #FFD12F;
+  background-color: #ffd12f;
   padding-bottom: 20%;
   text-align: center;
+}
+
+.follower-followee-divs {
+  margin-top: 5%;
+  background-image: url("https://elenareadscom.files.wordpress.com/2018/05/people-1.jpg?w=810");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90vw 90vh;
+  opacity: 0.8;
+  height: 80vh;
+  display: flex;
+}
+
+.members {
+  /* display: flex;
+  width: 25vw;
+  height: 70vh;
+  flex-wrap: wrap;
+  margin: auto;
+  background-color: #ffd12f;
+  border-radius: 30px;
+  opacity: 0.9;
+  overflow: scroll;
+  margin-left: 2.5%; */
+  display: flex;
+  justify-content: center;
+  width: 25vw;
+  height: 70vh;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-left: 0;
+  background-color: #ffd12f;
+  border-radius: 30px;
+  opacity: 0.9;
+  overflow: scroll;
+  padding-bottom: 0;
+}
+
+.favorite-teachers {
+  display: flex;
+  justify-content: center;
+  width: 25vw;
+  height: 70vh;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-right: 2.5%;
+  background-color: #dbab00;
+  border-radius: 30px;
+  opacity: 0.9;
+  overflow: scroll;
+  padding-bottom: 0;
+  
+}
+.each-member {
+  /* padding: 2%; */
+  background-color: white;
+  margin: 2%;
+  height: 20vh;
+  width: 8vw;
+  border-radius: 20%;
+  text-align: center;
+  padding-top: 3%;
+  margin-bottom: 15%;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  overflow: hidden;
+  overflow: scroll;
+}
+
+.each-favorite {
+  /* padding: 2%; */
+  background-color: white;
+  margin: 2%;
+  height: 15vh;
+  width: 8vw;
+  border-radius: 25%;
+  text-align: center;
+  padding-top: 5%;
+  font-family: "Cherry Cream Soda";
+  color: black;
+}
+
+.favorite-teachers-title {
+  display: block;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  opacity: 1;
+  text-align: center;
+  margin-top: 7%;
+}
+
+.followee-follower-username{
+  color: black;
+}
+
+.followee-follower-username:hover{
+  color: #ffd12f;
+}
+
+.follow-unfollow-button {
+  border: none;
+  background-color: #ffd12f;
+}
+
+.follow-unfollow-button:hover {
+  color: white;
+}
+
+.followee-questions-quotes-wrapper {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 5%;
+  height: 35vh;
+}
+
+.followee-book-lesson-image {
+  box-shadow: 6px 5px 5px #00000025;
+  width: 15vw;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.followee-questions {
+  font-family: "Cherry Cream Soda";
+  color: black;
+}
+
+.followee-quotes {
+  margin-left: 10%;
+  font-family: "Cherry Cream Soda";
+  color: black;
+}
+
+/* .followee-student-work-coming-soon{
+  
+  background-color: #ffd12f;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  padding: 3%;
+  margin-bottom: 50%;
+  
+} */
+
+.followee-book-lesson-top-of-page-spacing{
+  margin-top: 1.9%;
 }
