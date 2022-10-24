@@ -33,9 +33,11 @@ export default function StudentQuestion({question, handleQuestionDelete, lessonB
   return (
     
         <div>
+          <div className="add-discussion-questions-form">
             {editclicked ? <input type="text" name="discussion_question_edited" value={editedDiscussionQuestion.discussion_question_edited} placeholder={question.discussion_question} onChange={handleEditChange}/>:<li>{question.discussion_question}</li>}
-            {editclicked ? <button onClick={() => handleSave(question, editedDiscussionQuestion)}>Save</button> :<button onClick={handleEditClick}>Edit</button>}
-            <button onClick={() => handleQuestionDelete(question)}>Delete</button>
+            {editclicked ? <button onClick={() => handleSave(question, editedDiscussionQuestion)} className="add-questions-quotes">Save</button> :<button onClick={handleEditClick} className="add-questions-quotes">Edit</button>}
+            <button onClick={() => handleQuestionDelete(question)} className="add-questions-quotes">Delete</button>
+            </div>
         </div>
    
   )

@@ -203,20 +203,27 @@ export default function UserBookLesson({ user, setUser }) {
     <div>
       <button onClick={logout} className='logout-button'>Logout</button>
       {user.username.length > 0 ? <NavBar /> : <Navigate to="/" />}
-      <Link to="/profile">back</Link>
+      <div className="user-bookshelf-back"><Link to="/profile"><h3 className="user-bookshelf-back">back</h3></Link></div>
       <br />
-      <img src={bookCollection.image} width="200px" height="200px" />
+      <div className="whole-lesson-wrapper">
+      <img src={bookCollection.image} className="book-lesson-image"/>
       <br />
-
-      <p>Discussion Questions</p>
+      <div className="questions-and-quotes-divs">
+        <div className="questions-quotes-student-work">
+      <h5>Discussion Questions</h5>
+      
       <form onChange={handleFormChange} onSubmit={handleFormSubmit}>
+      <div className="add-discussion-questions-form">
         <input
           type="text"
           name="discussion_question"
           value={discussionQuestion.discussion_question}
+          className="lesson-inputs"
         />
-        <button>Add</button>
+        <button className="add-questions-quotes">Add</button>
+        </div>
       </form>
+      
       <ul>
         {allQuestions.map((question) => (
           <StudentQuestion
@@ -227,18 +234,22 @@ export default function UserBookLesson({ user, setUser }) {
           />
         ))}
       </ul>
-
-      <p>Student Quotes</p>
+      </div>
+      <div className="questions-quotes-student-work">
+      <h5>Student Quotes</h5>
       <form
         onChange={handleStudentQuoteChange}
         onSubmit={handleStudentQuoteSubmit}
       >
+        <div className="add-discussion-questions-form">
         <input
           type="text"
           name="student_quote"
           value={studentQuote.student_quote}
+          className="lesson-inputs"
         />
-        <button>Add</button>
+        <button className="add-questions-quotes">Add</button>
+        </div>
       </form>
       <ul>
         {allStudentQuotes.map((quote) => (
@@ -250,9 +261,12 @@ export default function UserBookLesson({ user, setUser }) {
           />
         ))}
       </ul>
-
-      <p>Student Work</p>
-      <form
+      </div>
+      <div className="questions-quotes-student-work">
+      <h5>Student Work Coming Soon!</h5>
+      </div>
+      </div>
+      {/* <form
         onChange={handleStudentWorkChange}
         onSubmit={handleStudentWorkSubmit}
       >
@@ -266,7 +280,8 @@ export default function UserBookLesson({ user, setUser }) {
       </form>
       {allStudentWork.map((work) => (
         <StudentWork work={work} handleWorkDelete={handleWorkDelete} />
-      ))}
+      ))} */}
+      </div>
     </div>
   );
 }

@@ -55,8 +55,8 @@ export default function Profile({ user, setUser, books }) {
     <div>
      <Link to="/"><button onClick={logout} className='logout-button'>Logout</button></Link>
       {user.username.length > 0 ? <NavBar /> : null}
-      <h1>{user.username}'s Bookshelf</h1>
-      <div className="book-tiles">
+      <div className="user-bookshelf-name"><img src="images/closedbook.png" className="bookshelf-book-picture"/><h3>{user.username}'s Bookshelf</h3></div>
+      <div className="bookshelf-background-image">
         {/* {linkClicked ? <UserBookLesson user={user}/> : <UserBookTiles user={user} userbooks={userBookData} books={books} handleDeleteBook={handleDeleteBook} handleLinkClick={handleLinkClick}/>} */}
         <UserBookTiles
           user={user}
