@@ -263,7 +263,7 @@ export default function UserBookLesson({ user, setUser }) {
       </ul>
       </div>
       <div className="questions-quotes-student-work">
-      <h5>Student Work Coming Soon!</h5>
+      <h5 className="student-work-coming-soon">Student Work Coming Soon!</h5>
       </div>
       </div>
       {/* <form
