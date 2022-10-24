@@ -783,9 +783,20 @@ color: white;
   padding: 1%;
   height: 4vh;
   background: transparent;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  background-color: #FFD12F;
+  margin: 1%;
+  margin-right: 4%;
+  margin-left: 4%;
 }
 
 .add-questions-quotes:hover{
-  color: #FFD12F;
+  color: white;
+}
+
+.student-work-coming-soon {
+  padding-top: 20%;
+  background-color: #FFD12F;
+  padding-bottom: 20%;
+  text-align: center;
 }
