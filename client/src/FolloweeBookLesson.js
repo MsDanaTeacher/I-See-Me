@@ -8,7 +8,7 @@ export default function FolloweeBookLesson({user}) {
     const [bookImage, setBookImage] = useState("")
     const [discussionquestions, setDiscussionQuestions] = useState([])
     const [studentQuotes, setStudentQuotes] = useState([])
-
+  const [bookDescription, setBookDescription] = useState("")
     useEffect(() => {
         let token = localStorage.getItem("token");
         if(token){
@@ -20,8 +20,10 @@ export default function FolloweeBookLesson({user}) {
           .then((res) => res.json())
           .then((data) => {
             setBookImage(data.book_collection.image)
+            setBookDescription(data.book_collection.description)
             setDiscussionQuestions(data.discussion_questions)
             setStudentQuotes(data.student_quotes)
+
           })
         }
         }, [])
@@ -48,8 +50,11 @@ const allStudentQuotes = studentQuotes.map((quote, i) => {
         {user.username.length > 0 ? <NavBar /> : null}
         <div className="user-bookshelf-back"><Link to="/community"><h3 className="user-bookshelf-back">back</h3></Link></div>
         <br />
-        <div className="whole-lesson-wrapper">
-        <img src={bookImage} className="followee-book-lesson-image"/><br />
+        <div className="followee-whole-lesson-wrapper">
+        <div className="book-image-and-description-followee">
+        <img src={bookImage} className="followee-book-lesson-image"/>
+        <p className="book-lesson-description-followee">{bookDescription}</p>
+        </div>
         <div className='followee-questions-quotes-wrapper'>
           <div className='followee-questions'>
         <h5>Discussion Questions</h5>

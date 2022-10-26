@@ -8,8 +8,9 @@ class UsersController < ApplicationController
 
     def create #for /signup
         @user = User.create!(user_params)
-        token = JWT.encode({user_id: @user.id}, secret_key)
-        render json: {user: @user, token: token}
+        # token = JWT.encode({user_id: @user.id}, secret_key)
+        # render json: {user: @user, token: token}
+        render json: @user
     end 
 
     def show #for /me

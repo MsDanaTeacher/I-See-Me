@@ -8,4 +8,7 @@ class BookCollectionsController < ApplicationController
         render json: BookCollection.find(params[:id])
     end
 
+    def unowned_books
+        render json: @current_user.not_owned_by
+    end
 end

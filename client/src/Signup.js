@@ -34,15 +34,16 @@ export default function Signup({setUser}) {
         })
         .then(res => res.json())
         .then(data => {
-            setUser(data.user)
-            localStorage.setItem('token', data.token)
-        //    console.log(data.user)
+       console.log(data)
            
         })
+        alert('User created!')
         .catch(err => console.log(err))
         
     }
 
+     //    setUser(data.user)
+        //    localStorage.setItem('token', data.token)
   return (
     <div className='signup'>
         <form onChange={e => signUpChange(e)} onSubmit={e => signUpSubmit(e)} className='signup-form'>

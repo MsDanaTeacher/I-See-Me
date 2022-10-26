@@ -19,7 +19,15 @@ export default function SearchBooksPage({user,setUser, bookData}) {
     //any time the dropdown menu value changes, want it to rerender the page with those filtered books
     useEffect(() => setDisplayedBooks([...searchForBooks]), [filteredBooks, search])
     
+    function onAddToLibrary(book){
+      console.log('hello')
+      const newArray = [...displayedBooks]
+      newArray.filter((el) => el.id !== book.id)
+      console.log(newArray)
+      setDisplayedBooks(newArray)
     
+    }
+
     const filteredBooksBySubject = bookData.filter((book) => {
       //if filter is selected, return the books whose subject match that filter
       if (!!filteredBooks && filteredBooks !== "Select"){
@@ -60,8 +68,8 @@ export default function SearchBooksPage({user,setUser, bookData}) {
         </select>
         </div>
         <br />
-        <div className='wrapper-for-book-search-box'><div className='build-your-library'><h3>BUILD YOUR LIBRARY!</h3></div>
-        <BookTiles books={displayedBooks} user={user}/></div>
+        <div className='wrapper-for-book-search-box'><div className='build-your-library'><h3 className='build-lib-title'>BUILD YOUR LIBRARY!</h3></div>
+        <BookTiles books={displayedBooks} user={user} onAddToLibrary={onAddToLibrary}/></div>
         <h3 className='book-recommendation-form-link'>Have a book recommendation? Share it <Link to="/bookrecommendation" className='share-here'>here!</Link></h3>
     </div>
   )

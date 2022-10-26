@@ -15,7 +15,7 @@ const year = new Date().getFullYear();
     <>
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
       <div className='text-center p-4' style={{ backgroundColor: '#FFD12F' }}>
-        © {year} Dana Lobell
+        © {year} Dana Lobell <br /> Illustrations owned and created by Christian Robinson
       </div>   
     </MDBFooter>
     

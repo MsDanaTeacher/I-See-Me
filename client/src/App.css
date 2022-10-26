@@ -24,7 +24,7 @@ footer div {
   background-image: url("https://thewilddetectives.com/wp-content/uploads/2020/02/kids-in-the-cliff.png");
   background-size: cover;
   background-color: white;
-  height: 91vh;
+  height: 95vh;
   opacity: 0.9;
   overflow: hidden;
   display: flex;
@@ -204,9 +204,11 @@ footer div {
   padding-right: 4%;
   padding-top: 0.7%;
 }
-
+.iseeme{
+  margin-left: 5%;
+}
 .navbar-home {
-  padding-left: 20%;
+  padding-left: 30%;
   padding-right: 5%;
   color: black;
   padding-top: 0.7%;
@@ -223,7 +225,7 @@ footer div {
 .hello-teacher {
   font-family: "Cherry Cream Soda";
   color: black;
-  padding-left: 7.5%;
+  padding-left: 12%;
   color: #ffd12f;
 }
 
@@ -253,7 +255,8 @@ footer div {
 
 .teacher-picks-wrapper {
   display: flex;
-  margin-top: 3%;
+  margin-top: 1%;
+  /* margin-bottom: 0; */
 }
 .teacher-picks-title-wrapper {
   /* float: right; */
@@ -262,13 +265,22 @@ footer div {
 .teacher-picks-title-line {
   color: #dbab00;
   font-family: "Cherry Cream Soda";
+  margin-left: 60%;
+  margin-top: 2%;
+}
+
+.teacher-picks-title-line-theme{
+  color: #dbab00;
+  font-family: "Cherry Cream Soda";
   margin-left: 20%;
 }
 
 .teacher-picks-title {
   color: #dbab00;
   font-family: "Cherry Cream Soda";
-  text-align: right;
+  /* text-align: right; */
+  margin-left: 77%;
+  width: 10vw;
   font-size: 1.3rem;
 }
 
@@ -333,10 +345,15 @@ footer div {
 
 .banned-books-wrapper {
   display: flex;
-  margin-top: 5%;
+  margin-top: 2%;
   background-color: #ffd12f;
-  height: 35vw;
+  height: 25vw;
   width: 100vw;
+}
+
+.banned-books-container-for-flexing {
+  display: flex;
+  border: 2px solid blue;
 }
 
 .banned-books-title {
@@ -344,10 +361,12 @@ footer div {
   font-family: "Cherry Cream Soda";
   font-size: 1.3rem;
   padding: 5%;
+  padding-top: 3%;
+  padding-left: 13%;
 }
 
 .monthly-themed-books {
-  height: 40vw;
+  height: 35vw;
   width: 100vw;
   display: flex;
 }
@@ -356,8 +375,8 @@ footer div {
   color: #dbab00;
   font-family: "Cherry Cream Soda";
   font-size: 1.3rem;
-  width: 60%;
-  margin-left: 20%;
+  width: 30%;
+  margin-left: 30%;
 }
 
 .monthly-boxes-one {
@@ -370,12 +389,12 @@ footer div {
   width: 50%;
   height: 80%;
   margin: auto;
-  margin-right: 10%;
+  margin-right: 13%;
   background-color: #dbab00;
 }
 
 .monthly-themed-book-sizing {
-  height: 20vh;
+  height: 18vh;
   width: auto;
   margin: 5%;
   box-shadow: 6px 5px 5px #00000025;
@@ -396,14 +415,15 @@ footer div {
 .recommendation-form-overlay {
   position: fixed; /* Sit on top of the page content */
   background-color: #ffd22fba;
-  width: 30vw;
+  width: 25vw;
   height: 60vh;
   z-index: 2;
-  margin-left: 20vw;
+  margin-left: 30vw;
   margin-top: 6vw;
   text-align: center;
   font-family: "Cherry Cream Soda";
   color: black;
+  padding-top: 3%;
 }
 
 .recommendation-form-image {
@@ -420,7 +440,7 @@ footer div {
   padding-right: 10%;
   padding-left: 10%;
   padding-top: 5%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 0;
 }
 
@@ -434,6 +454,7 @@ footer div {
   border: none;
   outline: none;
   border-bottom: 1px solid black;
+  width: 15vw;
 }
 .recommendation-form-paragraph {
   margin-top: 3%;
@@ -443,27 +464,28 @@ footer div {
   border: none;
   border: 1px solid black;
   outline: none;
+  width: 15vw;
 }
 
 .submit-button {
   margin-top: 3%;
-  background: transparent;
+  background: white;
   border: none;
   /* border: 1px solid black; */
 }
 
 .submit-button:hover {
-  margin-top: 3%;
+  /* margin-top: 3%;
   background: transparent;
-  border: none;
+  border: none; */
   /* border: 1px solid black; */
-  color: white;
+  color: #ffd12f;
 }
 
 .search-and-filter-books {
   display: flex;
   justify-content: center;
-  margin-top: 7vh;
+  margin-top: 3vh;
   margin-bottom: 1vh;
 }
 
@@ -499,8 +521,16 @@ footer div {
   font-family: "Cherry Cream Soda";
   color: black;
   margin-bottom: 3%;
+  
 }
 
+/* .build-lib-title {
+  position:fixed;
+    top:10;
+    width:100%;
+    z-index:100;
+  background-color: #ffd12f;
+} */
 .wrapper-for-book-search-box {
   width: 100vw;
   height: 40vw;
@@ -518,12 +548,50 @@ footer div {
 }
 .book-tiles-each {
   display: flex;
-  width: 15vw;
+  width: 12.5vw;
   flex-wrap: wrap;
   margin: auto;
-  padding-left: 6%;
+  /* padding-left: 6%; */
+  /* margin-left: 6%; */
   margin-right: 6%;
   box-shadow: 6px 5px 5px #00000025;
+}
+
+.book-tiles-each-description {
+  display: flex;
+  width: 12.5vw;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 10%;
+  background-color: white;
+  color: black;
+  /* padding-left: 6%; */
+  /* margin-left: 6%; */
+  margin-right: 6%;
+  box-shadow: 6px 5px 5px #00000025;
+  height: 30vh;
+  overflow: hidden;
+  overflow: scroll;
+}
+
+.book-tiles-each-description-homepage{
+  display: flex;
+  width: 8vw;
+  flex-wrap: wrap;
+  /* margin: auto; */
+  padding: 1%;
+  background-color: white;
+  color: black;
+  /* padding-left: 6%; */
+  margin-left: 7.5%;
+  margin-right: 4%;
+  margin-top: 5%;
+  /* margin-right: 6%; */
+  box-shadow: 6px 5px 5px #00000025;
+  height: 20vh;
+  overflow: hidden;
+  overflow: scroll;
+ 
 }
 
 .book-recommendation-form-link {
@@ -561,11 +629,11 @@ footer div {
   background-color: #ffd12f;
   font-family: "Cherry Cream Soda";
   color: black;
-  margin-top: 3%;
+  margin-top: 1%;
   display: flex;
   align-items: center;
-  padding: 1%;
-  padding-left: 4%;
+  padding: .25%;
+  padding-left: 6%;
 }
 
 .bookshelf-book-picture {
@@ -589,9 +657,11 @@ footer div {
 }
 
 .user-bookshelf-books {
-  height: 30vh;
+  height: 20vh;
   box-shadow: 6px 5px 5px #00000025;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .user-bookshelf-books-titles {
@@ -617,15 +687,18 @@ footer div {
 .user-book-tiles-wrapper {
   display: flex;
   flex-wrap: wrap;
-  width: 90vw;
+  /* width: 90vw; */
   justify-content: center;
+  align-items: center;
   margin: auto;
-  margin-top: 3%;
+  /* margin-top: 3%; */
   overflow: hidden;
   overflow: scroll;
-  height: 40vw;
+  height: 45vw;
+  /* border-bottom: 10%; */
+  width: 90vw;
   /* border: 2px solid black; */
-  margin-bottom: 3%;
+  /* margin-bottom: 3%; */
 }
 
 .user-bookshelf-books-book-image {
@@ -649,25 +722,57 @@ footer div {
   color: #ffd12f;
 }
 
-/* .bookshelf-background-image {
-  background-image: url("https://thewilddetectives.com/wp-content/uploads/2020/02/kids-in-the-cliff.png");
-  background-position: center;
-  width: 100vw;
-  background-repeat: no-repeat;
+.bookshelf-background-image {
+height: 85vh;
 
-} */
+}
 
 .whole-lesson-wrapper {
   width: 90vw;
+  height: 80vh;
   margin: auto;
+  margin-left: 10%;
+}
+
+.followee-whole-lesson-wrapper{
+  width: 90vw;
+  height: 80vh;
+  margin: auto;
+  margin-left: 25%;
 }
 
 .book-lesson-image {
   box-shadow: 6px 5px 5px #00000025;
-  width: 15vw;
-  margin-left: 5%;
+  height: 15vw;
+  margin-left: 12.5%;
 }
 
+.book-image-and-description {
+  display: flex;
+  width: 100vw;
+  margin-left: 3%;
+}
+
+.book-image-and-description-followee{
+  display: flex;
+  width: 100vw;
+  margin-left: 3%;
+}
+.book-lesson-description {
+  width: 20vw;
+  margin: auto;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  margin-left: 8%;
+}
+
+.book-lesson-description-followee {
+  width: 20vw;
+  margin: auto;
+  font-family: "Cherry Cream Soda";
+  color: black;
+  margin-left: 8%;
+}
 .questions-and-quotes-divs {
   display: flex;
   font-family: "Cherry Cream Soda";
@@ -697,21 +802,23 @@ footer div {
   padding: 1%;
   height: 4vh;
   background: transparent;
+  text-shadow: 1px 1px #ffd12f;
   /* border: 2px solid black; */
-  background-color: #ffd12f;
+  /* background-color: #ffd12f; */
   margin: 1%;
   margin-right: 4%;
   margin-left: 4%;
 }
 
 .add-questions-quotes:hover {
-  color: white;
+  color: #ffd12f;
 }
 
 .student-work-coming-soon {
   padding-top: 20%;
   background-color: #ffd12f;
   padding-bottom: 20%;
+  padding-left: 2%;
   text-align: center;
 }
 
@@ -722,7 +829,7 @@ footer div {
   background-position: center;
   background-size: 90vw 90vh;
   opacity: 0.8;
-  height: 80vh;
+  height: 77vh;
   display: flex;
 }
 
@@ -770,7 +877,7 @@ footer div {
   /* padding: 2%; */
   background-color: white;
   margin: 2%;
-  height: 20vh;
+  height: 10vh;
   width: 8vw;
   border-radius: 20%;
   text-align: center;
@@ -786,11 +893,12 @@ footer div {
   /* padding: 2%; */
   background-color: white;
   margin: 2%;
-  height: 15vh;
+  height: 10vh;
   width: 8vw;
   border-radius: 25%;
   text-align: center;
   padding-top: 5%;
+  /* padding-bottom: 0; */
   font-family: "Cherry Cream Soda";
   color: black;
 }
@@ -824,7 +932,7 @@ footer div {
 .followee-questions-quotes-wrapper {
   display: flex;
   margin-top: 5%;
-  margin-left: 5%;
+  margin-left: 10%;
   height: 35vh;
 }
 
@@ -858,4 +966,12 @@ footer div {
 
 .followee-book-lesson-top-of-page-spacing{
   margin-top: 1.9%;
+}
+
+.i-want-it{
+  font-family: "Cherry Cream Soda";
+  color: black;
+  width: 100vw;
+  
+  padding-left: 40%;
 }

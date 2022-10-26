@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   # get '/allfollows/:id', to: 'follows#show'
   get '/followeeinformation/:id', to: 'users#showfollowee'
   get '/user_books/:id/:bookid', to: 'user_books#followee_user_books'
+  get '/book_collections_filtered', to: 'book_collections#unowned_books'
 end

@@ -41,7 +41,7 @@ const bookshelf = bookshelfBooks.map((book, i) => {
 
   return (
     <div>
-      <button onClick={logout} className='logout-button'>Logout</button>
+      <Link to="/"><button onClick={logout} className='logout-button'>Logout</button></Link>
       {user.username.length > 0 ? <NavBar /> : null}
     
       

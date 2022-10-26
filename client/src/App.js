@@ -18,18 +18,18 @@ function App() {
   const [bookData, setBookData] = useState([]);
 
   useEffect(() => {
-    // let token = localStorage.getItem("token");
-    // if (token) {
-      fetch("/collection", {
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
+    let token = localStorage.getItem("token");
+    if (token) {
+      fetch("/book_collections_filtered", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {
           setBookData(data);
         });
-    // }
+    }
   }, []);
 
   //auto login
@@ -53,6 +53,17 @@ function App() {
   return (
     <>
       <Routes>
+        {/* <Route
+          exact
+          path="/"
+          element={
+            user.username.length === 0 ? (
+              <Login user={user} setUser={setUser} />
+            ) : (
+              <Userhome user={user} setUser={setUser} />
+            )
+          }
+        /> */}
         <Route
           exact
           path="/"

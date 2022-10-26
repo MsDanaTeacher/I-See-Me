@@ -206,7 +206,9 @@ export default function UserBookLesson({ user, setUser }) {
       <div className="user-bookshelf-back"><Link to="/profile"><h3 className="user-bookshelf-back">back</h3></Link></div>
       <br />
       <div className="whole-lesson-wrapper">
+        <div className="book-image-and-description">
       <img src={bookCollection.image} className="book-lesson-image"/>
+      <p className="book-lesson-description">{bookCollection.description}</p></div>
       <br />
       <div className="questions-and-quotes-divs">
         <div className="questions-quotes-student-work">
