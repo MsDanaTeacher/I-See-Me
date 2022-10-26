@@ -16,5 +16,10 @@ class User < ApplicationRecord
     validates :password, presence: :true
     # validates :password, confirmation: { case_sensitive: true }
     # validates :password, length: { in: 4..10 }
-
+    def not_owned_by
+        unowned_books = []
+        owned_books = self.user_books.pluck(:book_collection_id)
+        BookCollection.all.map{|book| if !owned_books.include?(book.id) then unowned_books << book end}
+        unowned_books
+     end
 end

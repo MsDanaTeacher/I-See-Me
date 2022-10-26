@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_162526) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_223015) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,6 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_162526) do
     t.boolean "banned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "link"
+    t.string "description"
   end
 
   create_table "discussion_questions", force: :cascade do |t|

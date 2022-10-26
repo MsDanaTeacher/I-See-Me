@@ -6,7 +6,7 @@ export default function NavBar({user}) {
   return (
     <div className='nav-bar'>
      
-        <h1>I SEE ME</h1>
+        <h1 className='iseeme'>I SEE ME</h1>
           
             <Link to="/home" className='navbar-home'><h4>Home</h4></Link>
             <Link to="/community" className='navbar-names'><h4>Community</h4></Link>

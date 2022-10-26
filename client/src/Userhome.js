@@ -27,7 +27,7 @@ and encourages us to write more.”
         <div className='teacher-picks-wrapper'>
           <div className='teacher-picks-title-wrapper'>
           <p className='teacher-picks-title-line'>________________</p>
-          <p className='teacher-picks-title'>Teacher Picks</p>
+          <h2 className='teacher-picks-title'>Teacher Picks</h2>
           </div>
           <div className='teacher-picks-boxes'>
             <p className='teacher-reviews-one'>
@@ -51,7 +51,7 @@ and encourages us to write more.”
         <BannedBooksContainer />
         <div className='monthly-themed-books'>
           <div className='monthly-boxes-one'>
-          <p className='teacher-picks-title-line'>________________</p>
+          <p className='teacher-picks-title-line-theme'>______________________</p>
           <p className='monthly-picks-title'>
             October Collection: Books with Iranian Characters
           </p>

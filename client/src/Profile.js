@@ -4,7 +4,7 @@ import { Navigate, Link } from "react-router-dom";
 import UserBookTiles from "./UserBookTiles";
 // import UserBookLesson from './UserBookLesson'
 
-export default function Profile({ user, setUser, books }) {
+export default function Profile({ user, setUser }) {
   const [userBookData, setUserBookData] = useState([]);
   // const [linkClicked, setLinkClicked] = useState(false)
 
@@ -51,6 +51,7 @@ export default function Profile({ user, setUser, books }) {
     setUserBookData(rerenderedBooks);
   }
 
+
   return (
     <div>
      <Link to="/"><button onClick={logout} className='logout-button'>Logout</button></Link>
@@ -61,7 +62,7 @@ export default function Profile({ user, setUser, books }) {
         <UserBookTiles
           user={user}
           userbooks={userBookData}
-          books={books}
+          
           handleDeleteBook={handleDeleteBook}
         />
       </div>
