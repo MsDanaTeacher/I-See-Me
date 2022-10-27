@@ -39,7 +39,6 @@ export default function Signup({setUser}) {
         })
         alert('User created!')
         .catch(err => console.log(err))
-        
     }
 
      //    setUser(data.user)

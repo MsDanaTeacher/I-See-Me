@@ -10,6 +10,7 @@ export default function SearchBooksPage({user,setUser, bookData}) {
   const [filteredBooks, setFilteredBooks] = useState()
   const [search, setSearch] = useState("")
   const [displayedBooks, setDisplayedBooks] = useState([...bookData])
+  
 //displayed books starts out as all the book data
     const logout = () => {
         setUser({username: ''})
