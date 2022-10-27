@@ -70,6 +70,7 @@ export default function UserBookLesson({ user, setUser }) {
         .then((r) => r.json())
         .then((data) => setAllQuestions([data, ...allQuestions]));
     }
+    setDiscussionQuestion({discussion_question: ""})
   }
 
   function recentQuestion(id, newquestion) {
@@ -125,6 +126,7 @@ export default function UserBookLesson({ user, setUser }) {
       .then((r) => r.json())
       .then((data) => setAllStudentQuotes([data, ...allStudentQuotes]))
     }
+    setStudentQuote({ student_quote: "" })
   }
 
   function recentQuote(id, newquote) {
